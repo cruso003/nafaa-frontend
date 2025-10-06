@@ -14,6 +14,22 @@ import {
   HelpCircle,
   ExternalLink,
   Minimize2,
+  Gift,
+  Zap,
+  Mail,
+  BarChart3,
+  Fish,
+  MapPin,
+  CheckCircle,
+  Search,
+  TrendingUp,
+  Download,
+  Target,
+  Clock,
+  Phone,
+  Building2,
+  RefreshCw,
+  Anchor,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -42,47 +58,47 @@ interface MessageLink {
 // Knowledge base for the chatbot
 const knowledgeBase = {
   greetings: [
-    "Hello! I'm the NaFAA Virtual Assistant. How can I help you today?",
-    "Hi there! Welcome to NaFAA. What can I assist you with?",
+    "Hello! I'm the NFAA Virtual Assistant. How can I help you today?",
+    "Hi there! Welcome to the National Fisheries and Aquaculture Authority. What can I assist you with?",
     "Greetings! I'm here to help with your fishing and aquaculture needs.",
   ],
   
   fishingLicense: {
-    info: "We offer three types of fishing licenses:\n\n📋 Commercial License - $800\nFor large-scale commercial fishing operations. Requires business registration.\n\n📋 Artisanal License - $150\nFor traditional small-scale fishing. Supports local fishermen.\n\n📋 Recreational License - $50\nFor hobby fishing and personal use.\n\nWould you like to apply for a license?",
+    info: "We offer three types of fishing licenses:\n\n• Commercial License - $800\nFor large-scale commercial fishing operations. Requires business registration.\n\n• Artisanal License - $150\nFor traditional small-scale fishing. Supports local fishermen.\n\n• Recreational License - $50\nFor hobby fishing and personal use.\n\nWould you like to apply for a license?",
     requirements: "To apply for a fishing license, you'll need:\n\n✓ Valid government-issued ID\n✓ Proof of address\n✓ Vessel registration (if applicable)\n✓ Business documents (for commercial)\n✓ Insurance certificate (vessels over 15m)\n\nReady to start your application?",
-    process: "The application process is simple:\n\n1️⃣ Choose your license type\n2️⃣ Fill out personal/business information\n3️⃣ Provide vessel and fishing details\n4️⃣ Upload required documents\n5️⃣ Review and submit\n\nYou'll receive a tracking number immediately!",
+    process: "The application process is simple:\n\n1. Choose your license type\n2. Fill out personal/business information\n3. Provide vessel and fishing details\n4. Upload required documents\n5. Review and submit\n\nYou'll receive a tracking number immediately!",
   },
   
   vesselRegistration: {
-    info: "We register four types of vessels:\n\n🚢 Commercial Vessel - $1,200\nFor commercial fishing operations\n\n🚢 Artisanal Vessel - $300\nFor traditional fishing boats\n\n🚢 Carrier Vessel - $1,500\nFor fish transport and processing\n\n🚢 Recreational Vessel - $150\nFor personal use\n\nWould you like to register your vessel?",
+    info: "We register four types of vessels:\n\n• Commercial Vessel - $1,200\nFor commercial fishing operations\n\n• Artisanal Vessel - $300\nFor traditional fishing boats\n\n• Carrier Vessel - $1,500\nFor fish transport and processing\n\n• Recreational Vessel - $150\nFor personal use\n\nWould you like to register your vessel?",
     requirements: "For vessel registration, you'll need:\n\n✓ Proof of ownership\n✓ Builder's certificate\n✓ Vessel specifications (dimensions, tonnage, engine)\n✓ Business registration (for commercial)\n✓ Insurance certificate\n✓ Multiple vessel photos\n\nShall I guide you to the registration form?",
   },
   
   renewal: {
-    info: "License renewal is easy and offers benefits:\n\n🎁 Early Renewal Discount - 10% off if you renew 30+ days before expiry\n💰 Save money by planning ahead\n⚡ Quick process - reuse existing information\n📧 Receive reminders before expiry\n\nWant to renew your license now?",
+    info: "License renewal is easy and offers benefits:\n\n• Early Renewal Discount - 10% off if you renew 30+ days before expiry\n• Save money by planning ahead\n• Quick process - reuse existing information\n• Receive reminders before expiry\n\nWant to renew your license now?",
     discount: "Yes! We offer a 10% early renewal discount if you renew your license 30 or more days before it expires. For example:\n\n• Commercial license: $800 → $720 (save $80)\n• Artisanal license: $150 → $135 (save $15)\n• Recreational license: $50 → $45 (save $5)\n\nCheck your dashboard to see if you qualify!",
   },
   
   catchReporting: {
-    info: "Catch reporting helps us manage sustainable fisheries:\n\n📊 Submit reports after each fishing trip\n🐟 Record species, weight, and quantities\n📍 Provide GPS coordinates\n🆓 Reporting is FREE\n✅ Required for license compliance\n\nReady to submit a catch report?",
-    howTo: "Submitting a catch report is straightforward:\n\n1️⃣ Enter trip details (dates, location, crew)\n2️⃣ Add catch entries (species, weight, quantity)\n3️⃣ Provide GPS coordinates\n4️⃣ Add fishing method used\n5️⃣ Upload photos (optional)\n6️⃣ Submit and get reference number\n\nShall I open the report form for you?",
+    info: "Catch reporting helps us manage sustainable fisheries:\n\n• Submit reports after each fishing trip\n• Record species, weight, and quantities\n• Provide GPS coordinates\n• Reporting is FREE\n• Required for license compliance\n\nReady to submit a catch report?",
+    howTo: "Submitting a catch report is straightforward:\n\n1. Enter trip details (dates, location, crew)\n2. Add catch entries (species, weight, quantity)\n3. Provide GPS coordinates\n4. Add fishing method used\n5. Upload photos (optional)\n6. Submit and get reference number\n\nShall I open the report form for you?",
   },
   
   portal: {
-    info: "Your NaFAA Portal Dashboard is your command center:\n\n📊 View all applications in one place\n🔍 Search by tracking number\n📈 Track application status\n⬇️ Download approved documents\n🎯 Quick access to new applications\n\nYou can manage licenses, vessels, renewals, and reports all from one screen!",
+    info: "Your NaFAA Portal Dashboard is your command center:\n\n• View all applications in one place\n• Search by tracking number\n• Track application status\n• Download approved documents\n• Quick access to new applications\n\nYou can manage licenses, vessels, renewals, and reports all from one screen!",
     tracking: "You can track your applications easily:\n\n1. Go to your Portal Dashboard\n2. Find the unified applications table\n3. Search by tracking number (FL-, VR-, RN-, CR-)\n4. Filter by status or type\n5. View details, download documents, or cancel pending items\n\nEach application has a unique tracking number for easy reference!",
   },
   
   fees: {
-    summary: "Here's a quick fee summary:\n\nFishing Licenses:\n💵 Commercial: $800\n💵 Artisanal: $150\n💵 Recreational: $50\n\nVessel Registration:\n💵 Commercial: $1,200\n💵 Artisanal: $300\n💵 Carrier: $1,500\n💵 Recreational: $150\n\nOther Services:\n💵 Catch Reporting: FREE\n💵 Early Renewal: 10% discount\n\nAll fees help maintain sustainable fisheries!",
+    summary: "Here's a quick fee summary:\n\nFishing Licenses:\n• Commercial: $800\n• Artisanal: $150\n• Recreational: $50\n\nVessel Registration:\n• Commercial: $1,200\n• Artisanal: $300\n• Carrier: $1,500\n• Recreational: $150\n\nOther Services:\n• Catch Reporting: FREE\n• Early Renewal: 10% discount\n\nAll fees help maintain sustainable fisheries!",
   },
   
   contact: {
-    info: "Need to reach us?\n\n📧 Email: info@nafaa.gov.lr\n📞 Phone: +231-XXX-XXXX\n🏢 Office: Ministry of Agriculture, Monrovia\n⏰ Hours: Mon-Fri, 8am-5pm\n\nOr use our contact form for specific inquiries!",
+    info: "Need to reach us?\n\n• Email: info@nafaa.gov.lr\n• Phone: +231-XXX-XXXX\n• Office: Ministry of Agriculture, Monrovia\n• Hours: Mon-Fri, 8am-5pm\n\nOr use our contact form for specific inquiries!",
   },
   
   help: {
-    general: "I can help you with:\n\n🎣 Fishing license information and applications\n🚢 Vessel registration\n🔄 License renewals and discounts\n📊 Catch reporting requirements\n💰 Fees and payment information\n📍 Application tracking\n📞 Contact information\n\nWhat would you like to know more about?",
+    general: "I can help you with:\n\n• Fishing license information and applications\n• Vessel registration\n• License renewals and discounts\n• Catch reporting requirements\n• Fees and payment information\n• Application tracking\n• Contact information\n\nWhat would you like to know more about?",
   },
 };
 
@@ -372,7 +388,7 @@ export default function ChatBot() {
             <Button
               onClick={() => setIsOpen(true)}
               size="lg"
-              className="h-14 w-14 rounded-full bg-gradient-to-r from-[#002868] to-[#0066CC] hover:from-[#001845] hover:to-[#004C99] shadow-lg hover:shadow-xl transition-all"
+              className="h-14 w-14 rounded-full bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean hover:from-nafaa-ocean-dark hover:to-nafaa-ocean-dark shadow-lg hover:shadow-xl transition-all"
             >
               <MessageCircle className="h-6 w-6" />
             </Button>
@@ -402,7 +418,7 @@ export default function ChatBot() {
             style={{ maxHeight: isMinimized ? "60px" : "600px" }}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#002868] to-[#0066CC] text-white p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <div className="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur">
@@ -411,7 +427,7 @@ export default function ChatBot() {
                   <div className="absolute bottom-0 right-0 h-3 w-3 bg-green-400 rounded-full border-2 border-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">NaFAA Assistant</h3>
+                  <h3 className="font-semibold">NFAA Assistant</h3>
                   <p className="text-xs opacity-90">Online • Ready to help</p>
                 </div>
               </div>
@@ -450,7 +466,7 @@ export default function ChatBot() {
                       <div
                         className={`h-8 w-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                           message.sender === "user"
-                            ? "bg-[#0066CC]"
+                            ? "bg-nafaa-ocean"
                             : "bg-gray-200"
                         }`}
                       >
@@ -472,7 +488,7 @@ export default function ChatBot() {
                         <div
                           className={`px-4 py-2.5 rounded-2xl whitespace-pre-line text-sm ${
                             message.sender === "user"
-                              ? "bg-[#0066CC] text-white rounded-br-sm"
+                              ? "bg-nafaa-ocean text-white rounded-br-sm"
                               : "bg-white text-gray-800 rounded-bl-sm shadow-sm border border-gray-100"
                           }`}
                         >
@@ -508,7 +524,7 @@ export default function ChatBot() {
                                   onClick={() =>
                                     handleQuickAction(action.action)
                                   }
-                                  className="px-3 py-1.5 text-xs font-medium text-[#0066CC] bg-blue-50 hover:bg-blue-100 rounded-full transition-colors border border-[#0066CC]/30"
+                                  className="px-3 py-1.5 text-xs font-medium text-nafaa-ocean bg-blue-50 hover:bg-blue-100 rounded-full transition-colors border border-nafaa-ocean/30"
                                 >
                                   {action.label}
                                 </button>
@@ -582,13 +598,13 @@ export default function ChatBot() {
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
                       onKeyPress={handleKeyPress}
-                      placeholder="Ask me anything about NaFAA services..."
+                      placeholder="Ask me anything about our services..."
                       className="flex-1"
                     />
                     <Button
                       onClick={() => handleSendMessage()}
                       disabled={!inputValue.trim()}
-                      className="bg-[#0066CC] hover:bg-[#004C99]"
+                      className="bg-nafaa-ocean hover:bg-nafaa-ocean-dark"
                     >
                       <Send className="h-4 w-4" />
                     </Button>

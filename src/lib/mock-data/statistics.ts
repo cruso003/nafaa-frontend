@@ -15,8 +15,8 @@ export const monthlyData = [
 ];
 
 export const vesselTypeData = [
-  { name: "Commercial", value: 380, color: "#002868" },
-  { name: "Artisanal", value: 820, color: "#0066CC" },
+  { name: "Commercial", value: 380, color: "var(--nafaa-ocean)" },
+  { name: "Artisanal", value: 820, color: "var(--nafaa-ocean)" },
   { name: "Recreational", value: 245, color: "#00A86B" },
   { name: "Processing", value: 95, color: "#C60C30" },
 ];

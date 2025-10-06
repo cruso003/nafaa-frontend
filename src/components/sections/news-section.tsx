@@ -120,11 +120,11 @@ export function NewsSection() {
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-200 mb-4"
           >
-            <Calendar className="h-4 w-4 text-[#0066CC]" />
-            <span className="text-sm font-semibold text-[#002868]">Latest Updates</span>
+            <Calendar className="h-4 w-4 text-nafaa-ocean" />
+            <span className="text-sm font-semibold text-nafaa-ocean">Latest Updates</span>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#002868] mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-nafaa-ocean mb-4">
             News & Announcements
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -160,7 +160,7 @@ export function NewsSection() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#002868] to-[#0066CC] hover:from-[#001845] hover:to-[#004C99] text-white shadow-lg"
+                className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean hover:from-nafaa-ocean-dark hover:to-nafaa-ocean-dark text-white shadow-lg"
               >
                 View All News
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -197,7 +197,7 @@ function NewsCard({ item }: { item: typeof newsItems[0] }) {
               
               {/* Badge */}
               <div className="absolute top-4 left-4 z-10">
-                <Badge className="bg-white/90 backdrop-blur-sm border-0 text-[#002868] shadow-lg">
+                <Badge className="bg-white/90 backdrop-blur-sm border-0 text-nafaa-ocean shadow-lg">
                   {item.category}
                 </Badge>
               </div>
@@ -208,12 +208,12 @@ function NewsCard({ item }: { item: typeof newsItems[0] }) {
                 transition={{ duration: 0.6 }}
                 className="absolute bottom-4 right-4 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg"
               >
-                <Icon className="h-6 w-6 text-[#002868]" />
+                <Icon className="h-6 w-6 text-nafaa-ocean" />
               </motion.div>
             </div>
 
             <CardHeader className="space-y-3 pb-3">
-              <h3 className="text-xl font-bold text-[#002868] line-clamp-2 group-hover:text-[#0066CC] transition-colors">
+              <h3 className="text-xl font-bold text-nafaa-ocean line-clamp-2 group-hover:text-nafaa-ocean transition-colors">
                 {item.title}
               </h3>
             </CardHeader>
@@ -240,13 +240,13 @@ function NewsCard({ item }: { item: typeof newsItems[0] }) {
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
-                <ArrowRight className="h-5 w-5 text-[#0066CC] group-hover:text-[#002868]" />
+                <ArrowRight className="h-5 w-5 text-nafaa-ocean group-hover:text-nafaa-ocean" />
               </motion.div>
             </CardFooter>
 
             {/* Hover gradient overlay */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-[#002868]/0 to-[#0066CC]/0 group-hover:from-[#002868]/5 group-hover:to-[#0066CC]/5 transition-all duration-300 pointer-events-none"
+              className="absolute inset-0 bg-gradient-to-br from-nafaa-ocean/0 to-nafaa-ocean/0 group-hover:from-nafaa-ocean/5 group-hover:to-nafaa-ocean/5 transition-all duration-300 pointer-events-none"
             />
           </Card>
         </motion.div>

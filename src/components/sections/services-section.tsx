@@ -83,7 +83,7 @@ export function ServicesSection() {
             key={i}
             className="absolute w-64 h-64 rounded-full opacity-5"
             style={{
-              background: `radial-gradient(circle, ${i % 2 === 0 ? '#0066CC' : '#00A86B'} 0%, transparent 70%)`,
+              background: `radial-gradient(circle, ${i % 2 === 0 ? 'var(--nafaa-ocean)' : '#00A86B'} 0%, transparent 70%)`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
@@ -114,13 +114,13 @@ export function ServicesSection() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#002868]/10 to-[#0066CC]/10 border border-[#0066CC]/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-nafaa-ocean/10 to-nafaa-ocean/10 border border-nafaa-ocean/20 mb-6"
           >
-            <Sparkles className="h-4 w-4 text-[#0066CC]" />
-            <span className="text-sm font-semibold text-[#002868]">Digital Services</span>
+            <Sparkles className="h-4 w-4 text-nafaa-ocean" />
+            <span className="text-sm font-semibold text-nafaa-ocean">Digital Services</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#002868] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-nafaa-ocean mb-6">
             Fast, Secure & Convenient
           </h2>
           <p className="text-xl text-gray-600">
@@ -155,7 +155,7 @@ export function ServicesSection() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#002868] to-[#0066CC] hover:from-[#001845] hover:to-[#004C99] text-white shadow-lg text-base px-8"
+              className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean hover:from-nafaa-ocean-dark hover:to-nafaa-ocean-dark text-white shadow-lg text-base px-8"
             >
               View All Services
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -203,7 +203,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
                 </div>
               </motion.div>
 
-              <CardTitle className="text-2xl text-[#002868] group-hover:text-[#0066CC] transition-colors">
+              <CardTitle className="text-2xl text-nafaa-ocean group-hover:text-nafaa-ocean transition-colors">
                 {service.title}
               </CardTitle>
               <CardDescription className="text-base text-gray-600 leading-relaxed">
@@ -213,7 +213,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
 
             <CardContent className="relative z-10">
               <motion.div
-                className="flex items-center gap-2 text-[#0066CC] group-hover:text-[#002868] font-semibold"
+                className="flex items-center gap-2 text-nafaa-ocean group-hover:text-nafaa-ocean font-semibold"
                 whileHover={{ x: 5 }}
               >
                 Learn more
@@ -228,7 +228,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
 
             {/* Corner decoration */}
             <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Icon className="w-full h-full text-[#002868] rotate-12" />
+              <Icon className="w-full h-full text-nafaa-ocean rotate-12" />
             </div>
           </Card>
         </motion.div>

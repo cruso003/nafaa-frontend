@@ -16,7 +16,34 @@ import {
   MapPin,
   ExternalLink,
   ArrowRight,
+  Landmark,
+  Flag,
+  Leaf,
+  Fish,
+  Earth,
+  GraduationCap,
+  Anchor,
+  Shield,
 } from "lucide-react";
+
+// Icon mapping helper
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
+  Globe,
+  Landmark,
+  Flag,
+  Leaf,
+  Handshake,
+  Fish,
+  Earth,
+  GraduationCap,
+  Anchor,
+  Shield,
+};
+
+const getIcon = (iconName: string, className?: string) => {
+  const IconComponent = iconMap[iconName];
+  return IconComponent ? <IconComponent className={className} /> : null;
+};
 
 const internationalPartners = [
   {
@@ -25,7 +52,7 @@ const internationalPartners = [
     type: "UN Agency",
     description: "Technical assistance and capacity building for sustainable fisheries management",
     region: "Global",
-    logo: "🌐",
+    icon: "Globe",
     website: "fao.org",
     focus: ["Technical Support", "Capacity Building", "Policy Development"],
   },
@@ -35,7 +62,7 @@ const internationalPartners = [
     type: "Financial Institution",
     description: "Funding and technical support for fisheries sector development projects",
     region: "Global",
-    logo: "🏦",
+    icon: "Landmark",
     website: "worldbank.org",
     focus: ["Project Funding", "Economic Analysis", "Infrastructure"],
   },
@@ -45,7 +72,7 @@ const internationalPartners = [
     type: "Regional Organization",
     description: "Trade partnerships and support for sustainable fishing practices",
     region: "Europe",
-    logo: "🇪🇺",
+    icon: "Flag",
     website: "europa.eu",
     focus: ["Trade", "Sustainability", "Market Access"],
   },
@@ -55,7 +82,7 @@ const internationalPartners = [
     type: "NGO",
     description: "Marine conservation and protected area management support",
     region: "Global",
-    logo: "🌿",
+    icon: "Leaf",
     website: "conservation.org",
     focus: ["Conservation", "MPAs", "Biodiversity"],
   },
@@ -68,7 +95,7 @@ const regionalPartners = [
     type: "Regional Body",
     description: "Regional fisheries cooperation and policy harmonization",
     region: "West Africa",
-    logo: "🤝",
+    icon: "Handshake",
     website: "ecowas.int",
     focus: ["Regional Cooperation", "Policy Harmonization", "Trade"],
   },
@@ -78,7 +105,7 @@ const regionalPartners = [
     type: "Regional Fisheries Body",
     description: "Coordinated management of shared fish stocks in West Africa",
     region: "West Africa",
-    logo: "🐟",
+    icon: "Fish",
     website: "fcwc-fish.org",
     focus: ["Stock Management", "MCS", "Regional Coordination"],
   },
@@ -88,7 +115,7 @@ const regionalPartners = [
     type: "Regional Program",
     description: "Climate adaptation and biodiversity conservation in fisheries",
     region: "West Africa",
-    logo: "🌍",
+    icon: "Earth",
     website: "wabicc.org",
     focus: ["Climate Change", "Adaptation", "Biodiversity"],
   },
@@ -101,7 +128,7 @@ const localPartners = [
     type: "Academic Institution",
     description: "Research collaboration and student training programs",
     location: "Monrovia, Liberia",
-    logo: "🎓",
+    icon: "GraduationCap",
     focus: ["Research", "Education", "Training"],
   },
   {
@@ -110,7 +137,7 @@ const localPartners = [
     type: "Industry Association",
     description: "Representing small-scale fishers in policy and program development",
     location: "National",
-    logo: "⚓",
+    icon: "Anchor",
     focus: ["Advocacy", "Community Development", "Training"],
   },
   {
@@ -119,7 +146,7 @@ const localPartners = [
     type: "Government Agency",
     description: "Environmental compliance and marine ecosystem protection",
     location: "Monrovia, Liberia",
-    logo: "🏛️",
+    icon: "Shield",
     focus: ["Environmental Protection", "Compliance", "Monitoring"],
   },
   {
@@ -128,7 +155,7 @@ const localPartners = [
     type: "Government Agency",
     description: "Maritime safety and vessel registration coordination",
     location: "Monrovia, Liberia",
-    logo: "🚢",
+    icon: "Anchor",
     focus: ["Maritime Safety", "Vessel Registration", "Compliance"],
   },
 ];
@@ -137,7 +164,7 @@ export default function PartnershipsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -174,7 +201,7 @@ export default function PartnershipsPage() {
               <Globe className="h-6 w-6 text-blue-600" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-[#002868]">International Partners</h2>
+              <h2 className="text-3xl font-bold text-nafaa-ocean">International Partners</h2>
               <p className="text-gray-600">Global organizations supporting Liberia's fisheries development</p>
             </div>
           </div>
@@ -191,7 +218,9 @@ export default function PartnershipsPage() {
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-start gap-4">
-                      <div className="text-4xl">{partner.logo}</div>
+                      <div className="bg-gradient-to-br from-blue-600 to-blue-400 p-3 rounded-lg">
+                        {getIcon(partner.icon, "w-12 h-12 text-white")}
+                      </div>
                       <div className="flex-1">
                         <CardTitle className="text-xl mb-2">{partner.name}</CardTitle>
                         <div className="flex flex-wrap gap-2 mb-3">
@@ -239,7 +268,7 @@ export default function PartnershipsPage() {
               <Users className="h-6 w-6 text-green-600" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-[#002868]">Regional Partners</h2>
+              <h2 className="text-3xl font-bold text-nafaa-ocean">Regional Partners</h2>
               <p className="text-gray-600">West African organizations collaborating on fisheries management</p>
             </div>
           </div>
@@ -255,7 +284,9 @@ export default function PartnershipsPage() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="text-4xl mb-3">{partner.logo}</div>
+                    <div className="bg-gradient-to-br from-green-600 to-green-400 p-3 rounded-lg w-fit mb-3">
+                      {getIcon(partner.icon, "w-12 h-12 text-white")}
+                    </div>
                     <CardTitle className="text-lg mb-2">{partner.name}</CardTitle>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="secondary" className="text-xs">{partner.type}</Badge>
@@ -291,7 +322,7 @@ export default function PartnershipsPage() {
               <Building2 className="h-6 w-6 text-purple-600" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-[#002868]">Local Partners</h2>
+              <h2 className="text-3xl font-bold text-nafaa-ocean">Local Partners</h2>
               <p className="text-gray-600">Liberian institutions and organizations working with NaFAA</p>
             </div>
           </div>
@@ -307,7 +338,9 @@ export default function PartnershipsPage() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="text-4xl mb-3">{partner.logo}</div>
+                    <div className="bg-gradient-to-br from-purple-600 to-purple-400 p-3 rounded-lg w-fit mb-3">
+                      {getIcon(partner.icon, "w-12 h-12 text-white")}
+                    </div>
                     <CardTitle className="text-base mb-2 line-clamp-2">{partner.name}</CardTitle>
                     <Badge variant="secondary" className="text-xs w-fit">{partner.type}</Badge>
                   </CardHeader>
@@ -338,7 +371,7 @@ export default function PartnershipsPage() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Card className="bg-gradient-to-br from-[#002868] to-[#0066CC] text-white overflow-hidden">
+          <Card className="bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean text-white overflow-hidden">
             <CardContent className="pt-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
@@ -399,7 +432,7 @@ export default function PartnershipsPage() {
                       <label className="text-sm font-medium mb-1 block">Partnership Interest</label>
                       <Textarea placeholder="Tell us about your partnership proposal..." rows={4} />
                     </div>
-                    <Button size="lg" className="w-full bg-[#002868] hover:bg-[#001a4d]">
+                    <Button size="lg" className="w-full bg-nafaa-ocean hover:bg-[#001a4d]">
                       <Mail className="mr-2 h-4 w-4" />
                       Submit Inquiry
                     </Button>

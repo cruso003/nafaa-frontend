@@ -14,7 +14,7 @@ export default function MandatePage() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* Page Hero */}
-        <section className="relative bg-gradient-to-br from-[#002868] via-[#003A8C] to-[#0066CC] text-white py-24">
+        <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean-light to-nafaa-ocean text-white py-24">
           <div className="absolute inset-0 opacity-10">
             <Image
               src="/mandate-hero.jpg"
@@ -53,7 +53,7 @@ export default function MandatePage() {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-6">
                 Legislative Authority
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -75,7 +75,7 @@ export default function MandatePage() {
                       <div className={`w-14 h-14 bg-gradient-to-br ${area.gradient} rounded-xl flex items-center justify-center mb-4`}>
                         <area.icon className="h-7 w-7 text-white" />
                       </div>
-                      <CardTitle className="text-xl text-[#002868]">
+                      <CardTitle className="text-xl text-nafaa-ocean">
                         {area.title}
                       </CardTitle>
                     </CardHeader>
@@ -99,7 +99,7 @@ export default function MandatePage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Core Responsibilities
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -135,7 +135,7 @@ export default function MandatePage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Strategic Objectives
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -157,7 +157,7 @@ export default function MandatePage() {
                   <div className={`w-20 h-20 bg-gradient-to-br ${objective.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                     <span className="text-3xl font-bold text-white">{objective.number}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#002868] mb-2">
+                  <h3 className="text-lg font-bold text-nafaa-ocean mb-2">
                     {objective.title}
                   </h3>
                   <p className="text-gray-600 text-sm">
@@ -170,7 +170,7 @@ export default function MandatePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-[#002868] to-[#0066CC] text-white">
+        <section className="py-20 bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean text-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -186,7 +186,7 @@ export default function MandatePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/about/leadership">
-                  <Button size="lg" className="bg-white text-[#002868] hover:bg-gray-100">
+                  <Button size="lg" className="bg-white text-nafaa-ocean hover:bg-gray-100">
                     <Users className="mr-2 h-5 w-5" />
                     Meet Our Team
                   </Button>

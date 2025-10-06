@@ -17,7 +17,7 @@ export default function AboutPage() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* Page Hero */}
-        <section className="relative bg-gradient-to-br from-[#002868] via-[#003A8C] to-[#0066CC] text-white py-24">
+        <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean-light to-nafaa-ocean text-white py-24">
           <div className="absolute inset-0 opacity-10">
             <Image
               src="/about-hero.jpg"
@@ -56,7 +56,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-6">
                   The National Fisheries and Aquaculture Authority
                 </h2>
                 <div className="space-y-4 text-lg text-gray-700">
@@ -102,10 +102,10 @@ export default function AboutPage() {
               >
                 <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#002868] to-[#0066CC] rounded-2xl flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean rounded-2xl flex items-center justify-center mb-4">
                       <Target className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-2xl text-[#002868]">Our Vision</CardTitle>
+                    <CardTitle className="text-2xl text-nafaa-ocean">Our Vision</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg text-gray-700 leading-relaxed">
@@ -126,7 +126,7 @@ export default function AboutPage() {
                     <div className="w-16 h-16 bg-gradient-to-br from-[#00A86B] to-[#008556] rounded-2xl flex items-center justify-center mb-4">
                       <Heart className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-2xl text-[#002868]">Our Mission</CardTitle>
+                    <CardTitle className="text-2xl text-nafaa-ocean">Our Mission</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-lg text-gray-700 leading-relaxed">
@@ -149,7 +149,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Our Core Values
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -171,7 +171,7 @@ export default function AboutPage() {
                       <div className={`w-14 h-14 bg-gradient-to-br ${value.gradient} rounded-xl flex items-center justify-center mb-4`}>
                         <value.icon className="h-7 w-7 text-white" />
                       </div>
-                      <CardTitle className="text-xl text-[#002868]">
+                      <CardTitle className="text-xl text-nafaa-ocean">
                         {value.title}
                       </CardTitle>
                     </CardHeader>
@@ -186,7 +186,7 @@ export default function AboutPage() {
         </section>
 
         {/* Quick Links */}
-        <section className="py-20 bg-gradient-to-br from-[#002868] to-[#0066CC] text-white">
+        <section className="py-20 bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean text-white">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

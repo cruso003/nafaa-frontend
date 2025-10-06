@@ -41,6 +41,13 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* NaFAA Brand Colors */
+  --color-nafaa-ocean: var(--nafaa-ocean);
+  --color-nafaa-ocean-dark: var(--nafaa-ocean-dark);
+  --color-nafaa-ocean-light: var(--nafaa-ocean-light);
+  --color-nafaa-red: var(--nafaa-red);
+  --color-nafaa-green: var(--nafaa-green);
 }
 
 :root {
@@ -113,37 +120,16 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
-/* Theme Variables - Default Theme */
-:root,
-[data-theme="default"] {
-  --nafaa-navy: #002868;
-  --nafaa-red: #C60C30;
-  --nafaa-light-blue: #0066CC;
-  --nafaa-green: #00A86B;
-}
-
-/* Modern Theme - Contemporary & Clean */
-[data-theme="modern"] {
-  --nafaa-navy: #1E40AF; /* Brighter blue */
-  --nafaa-red: #EF4444; /* Softer red */
-  --nafaa-light-blue: #3B82F6; /* Vibrant blue */
-  --nafaa-green: #10B981; /* Fresh green */
-}
-
-/* Classic Theme - Traditional Government */
-[data-theme="classic"] {
-  --nafaa-navy: #1E3A8A; /* Deep navy */
-  --nafaa-red: #DC2626; /* Classic red */
-  --nafaa-light-blue: #2563EB; /* Traditional blue */
-  --nafaa-green: #059669; /* Forest green */
-}
-
-/* Minimal Theme - Subdued & Content-Focused */
-[data-theme="minimal"] {
-  --nafaa-navy: #374151; /* Dark gray */
-  --nafaa-red: #F87171; /* Muted red */
-  --nafaa-light-blue: #6B7280; /* Medium gray */
-  --nafaa-green: #9CA3AF; /* Light gray-green */
+/* NaFAA Brand Colors - Cyan/Turquoise Primary */
+:root {
+  /* Primary Brand Color - Bright Cyan/Turquoise (like the t-shirt) */
+  --nafaa-ocean: oklch(0.65 0.15 210);
+  --nafaa-ocean-dark: oklch(0.52 0.13 215);
+  --nafaa-ocean-light: oklch(0.75 0.12 205);
+  
+  /* Accent Colors */
+  --nafaa-red: oklch(0.55 0.22 25);
+  --nafaa-green: oklch(0.60 0.15 165);
 }
 
 /* Google Translate Widget Styling - COMPLETELY HIDDEN */

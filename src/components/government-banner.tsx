@@ -3,7 +3,7 @@ import { GoogleTranslateSwitcher } from "@/components/google-translate-switcher"
 
 export function GovernmentBanner() {
   return (
-    <div className="bg-[#002868] text-white py-2 border-b border-white/10">
+    <div className="bg-nafaa-ocean text-white py-2 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between text-sm">
         <div className="flex items-center gap-3">
           <Image

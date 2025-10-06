@@ -13,7 +13,7 @@ export default function OrganizationPage() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* Page Hero */}
-        <section className="relative bg-gradient-to-br from-[#002868] via-[#003A8C] to-[#0066CC] text-white py-24">
+        <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean-light to-nafaa-ocean text-white py-24">
           <div className="absolute inset-0 opacity-10">
             <Image
               src="/organization-hero.jpg"
@@ -52,7 +52,7 @@ export default function OrganizationPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Organizational Hierarchy
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -70,8 +70,8 @@ export default function OrganizationPage() {
                 transition={{ duration: 0.6 }}
                 className="flex justify-center"
               >
-                <Card className="border-2 border-[#002868] shadow-xl max-w-md w-full">
-                  <CardHeader className="text-center bg-gradient-to-r from-[#002868] to-[#0066CC] text-white">
+                <Card className="border-2 border-nafaa-ocean shadow-xl max-w-md w-full">
+                  <CardHeader className="text-center bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Building2 className="h-8 w-8 text-white" />
                     </div>
@@ -94,8 +94,8 @@ export default function OrganizationPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <Card className="h-full border-2 border-[#0066CC] shadow-lg hover:shadow-xl transition-shadow">
-                      <CardHeader className="text-center bg-gradient-to-r from-[#0066CC] to-[#00A0E3] text-white">
+                    <Card className="h-full border-2 border-nafaa-ocean shadow-lg hover:shadow-xl transition-shadow">
+                      <CardHeader className="text-center bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean-light text-white">
                         <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
                           <deputy.icon className="h-6 w-6 text-white" />
                         </div>
@@ -129,7 +129,7 @@ export default function OrganizationPage() {
                         <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${dept.gradient} flex items-center justify-center mb-3`}>
                           <dept.icon className="h-5 w-5 text-white" />
                         </div>
-                        <CardTitle className="text-base text-[#002868]">{dept.name}</CardTitle>
+                        <CardTitle className="text-base text-nafaa-ocean">{dept.name}</CardTitle>
                       </CardHeader>
                       <CardContent>
                         <p className="text-xs text-gray-600">{dept.description}</p>
@@ -152,7 +152,7 @@ export default function OrganizationPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Key Functions by Department
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -176,7 +176,7 @@ export default function OrganizationPage() {
                           <area.icon className="h-7 w-7 text-white" />
                         </div>
                         <div>
-                          <CardTitle className="text-xl text-[#002868] mb-2">
+                          <CardTitle className="text-xl text-nafaa-ocean mb-2">
                             {area.title}
                           </CardTitle>
                           <Badge variant="secondary">{area.team}</Badge>
@@ -210,7 +210,7 @@ export default function OrganizationPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Our Organization at a Glance
               </h2>
             </motion.div>
@@ -229,7 +229,7 @@ export default function OrganizationPage() {
                       <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center mx-auto mb-4`}>
                         <stat.icon className="h-8 w-8 text-white" />
                       </div>
-                      <div className="text-4xl font-bold text-[#002868] mb-2">
+                      <div className="text-4xl font-bold text-nafaa-ocean mb-2">
                         {stat.value}
                       </div>
                       <div className="text-sm text-gray-600">{stat.label}</div>
@@ -242,7 +242,7 @@ export default function OrganizationPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-br from-[#002868] to-[#0066CC] text-white">
+        <section className="py-20 bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean text-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -258,7 +258,7 @@ export default function OrganizationPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/about/leadership">
-                  <Button size="lg" className="bg-white text-[#002868] hover:bg-gray-100">
+                  <Button size="lg" className="bg-white text-nafaa-ocean hover:bg-gray-100">
                     <Users className="mr-2 h-5 w-5" />
                     Meet Our Team
                   </Button>

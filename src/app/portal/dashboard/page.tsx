@@ -754,8 +754,8 @@ export default function DashboardPage() {
                   <Area
                     type="monotone"
                     dataKey="catch"
-                    stroke="#0066CC"
-                    fill="#0066CC"
+                    stroke="var(--nafaa-ocean)"
+                    fill="var(--nafaa-ocean)"
                     fillOpacity={0.2}
                   />
                 </AreaChart>

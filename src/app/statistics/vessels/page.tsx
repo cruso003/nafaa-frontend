@@ -45,8 +45,8 @@ const vesselsByType = [
 ];
 
 const vesselsByRegion = [
-  { region: "Montserrado", vessels: 520, color: "#002868" },
-  { region: "Grand Bassa", vessels: 280, color: "#0066CC" },
+  { region: "Montserrado", vessels: 520, color: "var(--nafaa-ocean)" },
+  { region: "Grand Bassa", vessels: 280, color: "var(--nafaa-ocean)" },
   { region: "Sinoe", vessels: 240, color: "#00A86B" },
   { region: "Maryland", vessels: 190, color: "#C60C30" },
   { region: "Grand Kru", vessels: 160, color: "#F97316" },
@@ -81,7 +81,7 @@ export default function VesselStatisticsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="bg-gradient-to-r from-[#002868] to-[#0066CC] text-white py-12">
+      <section className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white py-12">
         <div className="container mx-auto px-4">
           <Button
             variant="ghost"
@@ -220,7 +220,7 @@ export default function VesselStatisticsPage() {
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-3">
                         <div
-                          className="bg-[#0066CC] h-3 rounded-full transition-all"
+                          className="bg-nafaa-ocean h-3 rounded-full transition-all"
                           style={{ width: `${item.percentage}%` }}
                         ></div>
                       </div>
@@ -287,8 +287,8 @@ export default function VesselStatisticsPage() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="commercial" stroke="#002868" strokeWidth={2} name="Commercial" />
-                    <Line type="monotone" dataKey="artisanal" stroke="#0066CC" strokeWidth={2} name="Artisanal" />
+                    <Line type="monotone" dataKey="commercial" stroke="var(--nafaa-ocean)" strokeWidth={2} name="Commercial" />
+                    <Line type="monotone" dataKey="artisanal" stroke="var(--nafaa-ocean)" strokeWidth={2} name="Artisanal" />
                     <Line type="monotone" dataKey="recreational" stroke="#00A86B" strokeWidth={2} name="Recreational" />
                   </LineChart>
                 </ResponsiveContainer>
@@ -316,7 +316,7 @@ export default function VesselStatisticsPage() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="count" fill="#0066CC" name="Vessels" />
+                    <Bar dataKey="count" fill="var(--nafaa-ocean)" name="Vessels" />
                   </BarChart>
                 </ResponsiveContainer>
               </CardContent>

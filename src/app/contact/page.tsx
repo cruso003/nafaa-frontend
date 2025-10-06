@@ -14,7 +14,7 @@ export default function ContactPage() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* Page Hero */}
-        <section className="relative bg-gradient-to-br from-[#002868] via-[#003A8C] to-[#0066CC] text-white py-24">
+        <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean-light to-nafaa-ocean text-white py-24">
           <div className="absolute inset-0 opacity-10">
             <Image
               src="/contact-hero.jpg"
@@ -60,7 +60,7 @@ export default function ContactPage() {
                       <div className={`w-14 h-14 bg-gradient-to-br ${method.gradient} rounded-xl flex items-center justify-center mx-auto mb-4`}>
                         <method.icon className="h-7 w-7 text-white" />
                       </div>
-                      <CardTitle className="text-lg text-[#002868]">
+                      <CardTitle className="text-lg text-nafaa-ocean">
                         {method.title}
                       </CardTitle>
                     </CardHeader>
@@ -84,7 +84,7 @@ export default function ContactPage() {
               >
                 <Card className="border-0 shadow-xl">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-[#002868]">
+                    <CardTitle className="text-2xl text-nafaa-ocean">
                       Send Us a Message
                     </CardTitle>
                     <p className="text-gray-600">
@@ -134,7 +134,7 @@ export default function ContactPage() {
                       <Button 
                         type="submit" 
                         size="lg" 
-                        className="w-full bg-gradient-to-r from-[#002868] to-[#0066CC] hover:from-[#001845] hover:to-[#004C99]"
+                        className="w-full bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean hover:from-nafaa-ocean-dark hover:to-nafaa-ocean-dark"
                       >
                         <Send className="mr-2 h-5 w-5" />
                         Send Message
@@ -153,7 +153,7 @@ export default function ContactPage() {
                 className="space-y-6">
                 <Card className="border-0 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-[#002868] flex items-center gap-3">
+                    <CardTitle className="text-2xl text-nafaa-ocean flex items-center gap-3">
                       <MapPin className="h-6 w-6" />
                       Main Office
                     </CardTitle>
@@ -178,7 +178,7 @@ export default function ContactPage() {
 
                 <Card className="border-0 shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-[#002868] flex items-center gap-3">
+                    <CardTitle className="text-2xl text-nafaa-ocean flex items-center gap-3">
                       <Clock className="h-6 w-6" />
                       Office Hours
                     </CardTitle>

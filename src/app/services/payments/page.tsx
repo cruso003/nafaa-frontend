@@ -266,7 +266,7 @@ export default function PaymentsPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Payment Type Selection */}
                   <div>
-                    <h3 className="text-lg font-semibold text-[#002868] mb-4">
+                    <h3 className="text-lg font-semibold text-nafaa-ocean mb-4">
                       What are you paying for?
                     </h3>
                     <RadioGroup value={paymentType} onValueChange={handlePaymentTypeChange}>
@@ -305,7 +305,7 @@ export default function PaymentsPage() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <h3 className="text-lg font-semibold text-[#002868] mb-4">
+                      <h3 className="text-lg font-semibold text-nafaa-ocean mb-4">
                         Payment Details
                       </h3>
                       <div className="grid md:grid-cols-2 gap-4">
@@ -398,7 +398,7 @@ export default function PaymentsPage() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: 0.1 }}
                     >
-                      <h3 className="text-lg font-semibold text-[#002868] mb-4">
+                      <h3 className="text-lg font-semibold text-nafaa-ocean mb-4">
                         Choose Payment Method
                       </h3>
                       <div className="grid md:grid-cols-3 gap-4">

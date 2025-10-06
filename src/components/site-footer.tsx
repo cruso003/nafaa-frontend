@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube } from "lucid
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#002868] text-white">
+    <footer className="bg-nafaa-ocean text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About */}
@@ -15,10 +15,10 @@ export function SiteFooter() {
                 alt="NaFAA Logo"
                 width={40}
                 height={40}
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
               <div>
-                <div className="font-bold">NaFAA</div>
+                <div className="font-bold">National Fisheries & Aquaculture Authority</div>
                 <div className="text-xs text-blue-200">Republic of Liberia</div>
               </div>
             </div>

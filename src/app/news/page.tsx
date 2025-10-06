@@ -22,7 +22,34 @@ import {
   User,
   ArrowRight,
   TrendingUp,
+  Ship,
+  Fish,
+  Waves,
+  GraduationCap,
+  Anchor,
+  BarChart3,
+  Handshake,
+  Building2,
+  Shell,
 } from "lucide-react";
+
+// Icon mapping helper
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
+  Ship,
+  Fish,
+  Waves,
+  GraduationCap,
+  Anchor,
+  BarChart3,
+  Handshake,
+  Building2,
+  Shell,
+};
+
+const getIcon = (iconName: string, className?: string) => {
+  const IconComponent = iconMap[iconName];
+  return IconComponent ? <IconComponent className={className} /> : null;
+};
 
 const newsArticles = [
   {
@@ -33,7 +60,7 @@ const newsArticles = [
     date: "2024-12-15",
     author: "Communications Team",
     readTime: "5 min read",
-    image: "🚢",
+    icon: "Ship",
     featured: true,
     views: 3450,
   },
@@ -45,7 +72,7 @@ const newsArticles = [
     date: "2024-12-12",
     author: "Research Division",
     readTime: "4 min read",
-    image: "🐟",
+    icon: "Fish",
     featured: true,
     views: 2890,
   },
@@ -57,7 +84,7 @@ const newsArticles = [
     date: "2024-12-10",
     author: "Dr. Sarah Johnson",
     readTime: "6 min read",
-    image: "🌊",
+    icon: "Waves",
     featured: true,
     views: 4120,
   },
@@ -69,7 +96,7 @@ const newsArticles = [
     date: "2024-12-08",
     author: "Training Division",
     readTime: "3 min read",
-    image: "🎓",
+    icon: "GraduationCap",
     featured: false,
     views: 1560,
   },
@@ -81,7 +108,7 @@ const newsArticles = [
     date: "2024-12-05",
     author: "Enforcement Team",
     readTime: "4 min read",
-    image: "⚓",
+    icon: "Anchor",
     featured: false,
     views: 5230,
   },
@@ -93,7 +120,7 @@ const newsArticles = [
     date: "2024-12-03",
     author: "Economics Unit",
     readTime: "5 min read",
-    image: "📊",
+    icon: "BarChart3",
     featured: false,
     views: 2340,
   },
@@ -105,7 +132,7 @@ const newsArticles = [
     date: "2024-12-01",
     author: "International Relations",
     readTime: "4 min read",
-    image: "🤝",
+    icon: "Handshake",
     featured: false,
     views: 1890,
   },
@@ -117,7 +144,7 @@ const newsArticles = [
     date: "2024-11-28",
     author: "Development Team",
     readTime: "5 min read",
-    image: "🏢",
+    icon: "Building2",
     featured: false,
     views: 2670,
   },
@@ -129,7 +156,7 @@ const newsArticles = [
     date: "2024-11-25",
     author: "Policy Division",
     readTime: "3 min read",
-    image: "🦐",
+    icon: "Shell",
     featured: false,
     views: 3120,
   },
@@ -180,7 +207,7 @@ export default function NewsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -211,16 +238,16 @@ export default function NewsPage() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold text-[#002868] mb-6">Featured Stories</h2>
+          <h2 className="text-2xl font-bold text-nafaa-ocean mb-6">Featured Stories</h2>
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Main Featured Article */}
             <Link href={`/news/${latestArticle.id}`}>
               <Card className="h-full hover:shadow-xl transition-shadow group cursor-pointer">
                 <CardContent className="p-0">
-                  <div className="relative h-64 bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-8xl overflow-hidden">
-                    <span className="group-hover:scale-110 transition-transform duration-500">
-                      {latestArticle.image}
-                    </span>
+                  <div className="relative h-64 bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center overflow-hidden">
+                    <div className="group-hover:scale-110 transition-transform duration-500">
+                      {getIcon(latestArticle.icon, "w-32 h-32 text-white")}
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -257,10 +284,10 @@ export default function NewsPage() {
                   <Card className="hover:shadow-lg transition-shadow group cursor-pointer">
                     <CardContent className="p-0">
                       <div className="flex">
-                        <div className="relative w-32 flex-shrink-0 bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center text-4xl">
-                          <span className="group-hover:scale-110 transition-transform duration-500">
-                            {article.image}
-                          </span>
+                        <div className="relative w-32 flex-shrink-0 bg-gradient-to-br from-green-600 to-green-400 flex items-center justify-center">
+                          <div className="group-hover:scale-110 transition-transform duration-500">
+                            {getIcon(article.icon, "w-16 h-16 text-white")}
+                          </div>
                         </div>
                         <div className="p-4 flex-1">
                           <div className="flex items-center gap-2 mb-2">
@@ -342,7 +369,7 @@ export default function NewsPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-[#002868]">
+            <h2 className="text-2xl font-bold text-nafaa-ocean">
               {searchQuery || selectedCategory !== "All Categories"
                 ? `Results (${filteredArticles.length})`
                 : "All News"}
@@ -361,10 +388,10 @@ export default function NewsPage() {
                 <Link href={`/news/${article.id}`}>
                   <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer">
                     <CardHeader>
-                      <div className="w-full h-40 bg-gradient-to-br from-purple-600 to-purple-400 rounded-lg flex items-center justify-center text-6xl mb-4 overflow-hidden">
-                        <span className="group-hover:scale-110 transition-transform duration-500">
-                          {article.image}
-                        </span>
+                      <div className="w-full h-40 bg-gradient-to-br from-purple-600 to-purple-400 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
+                        <div className="group-hover:scale-110 transition-transform duration-500">
+                          {getIcon(article.icon, "w-24 h-24 text-white")}
+                        </div>
                       </div>
                       <div className="flex items-center gap-2 mb-2">
                         <Badge variant="outline">{article.category}</Badge>
@@ -423,7 +450,7 @@ export default function NewsPage() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <Card className="bg-gradient-to-r from-[#002868] to-[#0066CC] text-white">
+          <Card className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white">
             <CardContent className="pt-6">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>

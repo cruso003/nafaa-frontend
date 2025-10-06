@@ -124,7 +124,7 @@ export default function VesselRegistrationPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="bg-gradient-to-r from-[#002868] to-[#0039A6] text-white py-16">
+      <section className="bg-gradient-to-r from-nafaa-ocean to-[#0039A6] text-white py-16">
         <div className="container mx-auto px-4">
           <Button
             variant="ghost"

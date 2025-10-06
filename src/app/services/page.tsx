@@ -122,7 +122,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -164,7 +164,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
               Our Services
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -241,7 +241,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
               Why Use Our Online Services?
             </h2>
           </motion.div>
@@ -258,10 +258,10 @@ export default function ServicesPage() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-blue-100 text-[#0066CC] flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-blue-100 text-nafaa-ocean flex items-center justify-center mx-auto mb-4">
                     <Icon className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#002868] mb-2">
+                  <h3 className="text-xl font-semibold text-nafaa-ocean mb-2">
                     {benefit.title}
                   </h3>
                   <p className="text-gray-600">{benefit.description}</p>
@@ -273,7 +273,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#002868] to-[#0066CC] text-white">
+      <section className="py-16 bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

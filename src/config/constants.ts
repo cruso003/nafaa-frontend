@@ -54,9 +54,9 @@ export const DEFAULT_THEME = 'default';
 
 // NaFAA Brand Colors
 export const BRAND_COLORS = {
-  navy: '#002868',
+  navy: 'var(--nafaa-ocean)',
   red: '#C60C30',
-  lightBlue: '#0066CC',
+  lightBlue: 'var(--nafaa-ocean)',
   green: '#00A86B',
   purple: '#8B5CF6',
   orange: '#F97316',

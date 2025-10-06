@@ -218,7 +218,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -283,7 +283,7 @@ export default function FAQPage() {
                     <IconComponent className={`h-6 w-6 ${colors.text}`} />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-[#002868]">{category.title}</h2>
+                    <h2 className="text-2xl font-bold text-nafaa-ocean">{category.title}</h2>
                     <p className="text-gray-600">{category.faqs.length} questions</p>
                   </div>
                 </div>
@@ -340,7 +340,7 @@ export default function FAQPage() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <Card className="bg-gradient-to-r from-[#002868] to-[#0066CC] text-white">
+          <Card className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white">
             <CardContent className="pt-8 pb-8">
               <div className="text-center max-w-2xl mx-auto">
                 <HelpCircle className="h-12 w-12 mx-auto mb-4" />

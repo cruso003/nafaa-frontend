@@ -204,7 +204,7 @@ export default function ResearchPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -295,7 +295,7 @@ export default function ResearchPage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-2xl font-bold text-[#002868] mb-6">Featured Research</h2>
+            <h2 className="text-2xl font-bold text-nafaa-ocean mb-6">Featured Research</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {featuredStudies.map((study) => {
                 const FieldIcon = getFieldIcon(study.field);
@@ -316,7 +316,7 @@ export default function ResearchPage() {
                       </p>
                       <div className="text-xs text-gray-500 mb-3">
                         <p className="mb-1">{study.authors.slice(0, 2).join(", ")}</p>
-                        <p className="text-[#0066CC]">{study.institution}</p>
+                        <p className="text-nafaa-ocean">{study.institution}</p>
                       </div>
                       <div className="flex flex-wrap gap-2 text-xs text-gray-500 mb-4">
                         <span className="flex items-center gap-1">
@@ -352,7 +352,7 @@ export default function ResearchPage() {
           viewport={{ once: true }}
         >
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-[#002868]">
+            <h2 className="text-2xl font-bold text-nafaa-ocean">
               {searchQuery || selectedCategory !== "All Categories" || selectedField !== "All Fields"
                 ? `Results (${filteredStudies.length})`
                 : "All Research"}
@@ -392,7 +392,7 @@ export default function ResearchPage() {
                             <p className="mb-1">
                               <span className="font-medium">Authors:</span> {study.authors.join(", ")}
                             </p>
-                            <p className="text-[#0066CC]">{study.institution}</p>
+                            <p className="text-nafaa-ocean">{study.institution}</p>
                           </div>
                           <div className="flex flex-wrap gap-4 text-xs text-gray-500">
                             <span className="flex items-center gap-1">
@@ -447,7 +447,7 @@ export default function ResearchPage() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <Card className="bg-gradient-to-r from-[#002868] to-[#0066CC] text-white">
+          <Card className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white">
             <CardContent className="pt-6">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>

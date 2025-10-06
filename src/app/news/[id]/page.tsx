@@ -18,7 +18,26 @@ import {
   Mail,
   TrendingUp,
   Eye,
+  Ship,
+  Fish,
+  Waves,
+  GraduationCap,
+  Anchor,
 } from "lucide-react";
+
+// Icon mapping helper
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
+  Ship,
+  Fish,
+  Waves,
+  GraduationCap,
+  Anchor,
+};
+
+const getIcon = (iconName: string, className?: string) => {
+  const IconComponent = iconMap[iconName];
+  return IconComponent ? <IconComponent className={className} /> : null;
+};
 
 // Mock data - in real app, this would come from CMS/API
 const newsArticles = {
@@ -31,7 +50,7 @@ const newsArticles = {
     author: "Communications Team",
     authorBio: "Official communications and public relations team at NaFAA",
     readTime: "5 min read",
-    image: "🚢",
+    icon: "Ship",
     views: 3450,
     content: `
       <p>The National Fisheries and Aquaculture Authority (NaFAA) is proud to announce the launch of its groundbreaking online vessel registration system, marking a significant milestone in the digital transformation of Liberia's fisheries sector.</p>
@@ -74,7 +93,7 @@ const newsArticles = {
     author: "Research Division",
     authorBio: "NaFAA Research and Data Analysis Team",
     readTime: "4 min read",
-    image: "🐟",
+    icon: "Fish",
     views: 2890,
     content: `
       <p>The fourth quarter of 2024 has brought exceptional news for Liberia's fishing industry, with yellowfin tuna catches reaching record levels not seen in over a decade.</p>
@@ -110,7 +129,7 @@ const newsArticles = {
     author: "Dr. Sarah Johnson",
     authorBio: "Chief Fisheries Scientist at NaFAA",
     readTime: "6 min read",
-    image: "🌊",
+    icon: "Waves",
     views: 4120,
     content: `
       <p>In a significant step toward marine conservation, the Government of Liberia, in partnership with NaFAA and Conservation International, has officially designated a new 500 square kilometer Marine Protected Area (MPA) off the coast of Grand Bassa County.</p>
@@ -155,21 +174,21 @@ const relatedArticles = [
     title: "Record-Breaking Tuna Catch Reported in Q4 2024",
     category: "Industry News",
     date: "2024-12-12",
-    image: "🐟",
+    icon: "Fish",
   },
   {
     id: 4,
     title: "Training Program Graduates 150 Artisanal Fishers",
     category: "Training",
     date: "2024-12-08",
-    image: "🎓",
+    icon: "GraduationCap",
   },
   {
     id: 5,
     title: "Illegal Fishing Vessel Arrested Off Liberian Coast",
     category: "Enforcement",
     date: "2024-12-05",
-    image: "⚓",
+    icon: "Anchor",
   },
 ];
 
@@ -189,7 +208,7 @@ export default function NewsArticlePage({ params }: { params: Promise<{ id: stri
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-12">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-12">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -219,8 +238,8 @@ export default function NewsArticlePage({ params }: { params: Promise<{ id: stri
               <Card>
                 <CardContent className="p-0">
                   {/* Article Image */}
-                  <div className="relative h-96 bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-9xl">
-                    {article.image}
+                  <div className="relative h-96 bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center">
+                    {getIcon(article.icon, "w-40 h-40 text-white")}
                   </div>
 
                   {/* Article Content */}
@@ -235,7 +254,7 @@ export default function NewsArticlePage({ params }: { params: Promise<{ id: stri
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+                    <h1 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                       {article.title}
                     </h1>
 
@@ -356,8 +375,8 @@ export default function NewsArticlePage({ params }: { params: Promise<{ id: stri
                         <Link key={related.id} href={`/news/${related.id}`}>
                           <div className="group cursor-pointer">
                             <div className="flex gap-3">
-                              <div className="w-16 h-16 rounded bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center text-2xl flex-shrink-0">
-                                {related.image}
+                              <div className="w-16 h-16 rounded bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center flex-shrink-0">
+                                {getIcon(related.icon, "w-8 h-8 text-white")}
                               </div>
                               <div className="flex-1 min-w-0">
                                 <Badge variant="outline" className="text-xs mb-1">
@@ -386,7 +405,7 @@ export default function NewsArticlePage({ params }: { params: Promise<{ id: stri
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-6"
             >
-              <Card className="bg-gradient-to-br from-[#002868] to-[#0066CC] text-white">
+              <Card className="bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean text-white">
                 <CardContent className="pt-6">
                   <h3 className="font-bold mb-2">Stay Updated</h3>
                   <p className="text-sm text-blue-100 mb-4">

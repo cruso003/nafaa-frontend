@@ -13,7 +13,7 @@ export default function LeadershipPage() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* Page Hero */}
-        <section className="relative bg-gradient-to-br from-[#002868] via-[#003A8C] to-[#0066CC] text-white py-24">
+        <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean-light to-nafaa-ocean text-white py-24">
           <div className="absolute inset-0 opacity-10">
             <Image
               src="/leadership-hero.jpg"
@@ -52,7 +52,7 @@ export default function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Executive Leadership
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -79,10 +79,10 @@ export default function LeadershipPage() {
                     />
                   </div>
                   <div className="md:col-span-3 p-6 md:p-8">
-                    <Badge className="mb-3 bg-[#002868] text-white">
+                    <Badge className="mb-3 bg-nafaa-ocean text-white">
                       Director General
                     </Badge>
-                    <h3 className="text-3xl font-bold text-[#002868] mb-2">
+                    <h3 className="text-3xl font-bold text-nafaa-ocean mb-2">
                       [Name]
                     </h3>
                     <p className="text-gray-600 mb-4">Director General, NaFAA</p>
@@ -97,11 +97,11 @@ export default function LeadershipPage() {
                     </div>
 
                     <div className="flex gap-3">
-                      <Button size="sm" variant="outline" className="border-[#002868] text-[#002868]">
+                      <Button size="sm" variant="outline" className="border-nafaa-ocean text-nafaa-ocean">
                         <Mail className="mr-2 h-4 w-4" />
                         Email
                       </Button>
-                      <Button size="sm" variant="outline" className="border-[#0066CC] text-[#0066CC]">
+                      <Button size="sm" variant="outline" className="border-nafaa-ocean text-nafaa-ocean">
                         <Linkedin className="mr-2 h-4 w-4" />
                         LinkedIn
                       </Button>
@@ -129,13 +129,13 @@ export default function LeadershipPage() {
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#002868]/80 to-transparent" />
-                      <Badge className="absolute top-4 right-4 bg-white/90 text-[#002868]">
+                      <div className="absolute inset-0 bg-gradient-to-t from-nafaa-ocean/80 to-transparent" />
+                      <Badge className="absolute top-4 right-4 bg-white/90 text-nafaa-ocean">
                         {member.position}
                       </Badge>
                     </div>
                     <CardHeader>
-                      <CardTitle className="text-xl text-[#002868]">
+                      <CardTitle className="text-xl text-nafaa-ocean">
                         {member.name}
                       </CardTitle>
                       <p className="text-sm text-gray-600">{member.title}</p>
@@ -173,7 +173,7 @@ export default function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
                 Department Heads
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -200,7 +200,7 @@ export default function LeadershipPage() {
                           className="object-cover"
                         />
                       </div>
-                      <h3 className="font-bold text-[#002868] mb-1">{head.name}</h3>
+                      <h3 className="font-bold text-nafaa-ocean mb-1">{head.name}</h3>
                       <p className="text-sm text-gray-600 mb-2">{head.department}</p>
                       <p className="text-xs text-gray-500">{head.title}</p>
                     </CardContent>
@@ -212,7 +212,7 @@ export default function LeadershipPage() {
         </section>
 
         {/* Join Our Team CTA */}
-        <section className="py-20 bg-gradient-to-br from-[#002868] to-[#0066CC] text-white">
+        <section className="py-20 bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean text-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -228,7 +228,7 @@ export default function LeadershipPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/careers">
-                  <Button size="lg" className="bg-white text-[#002868] hover:bg-gray-100">
+                  <Button size="lg" className="bg-white text-nafaa-ocean hover:bg-gray-100">
                     View Open Positions
                   </Button>
                 </Link>

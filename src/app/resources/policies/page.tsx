@@ -248,7 +248,7 @@ export default function PoliciesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -313,7 +313,7 @@ export default function PoliciesPage() {
                     <IconComponent className={`h-7 w-7 ${colors.text}`} />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-[#002868] mb-1">{category.title}</h2>
+                    <h2 className="text-2xl font-bold text-nafaa-ocean mb-1">{category.title}</h2>
                     <p className="text-gray-600">{category.description}</p>
                   </div>
                 </div>

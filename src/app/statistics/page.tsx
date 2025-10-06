@@ -43,8 +43,8 @@ const monthlyData = [
 ];
 
 const vesselTypeData = [
-  { name: "Commercial", value: 380, color: "#002868" },
-  { name: "Artisanal", value: 820, color: "#0066CC" },
+  { name: "Commercial", value: 380, color: "var(--nafaa-ocean)" },
+  { name: "Artisanal", value: 820, color: "var(--nafaa-ocean)" },
   { name: "Recreational", value: 245, color: "#00A86B" },
   { name: "Processing", value: 95, color: "#C60C30" },
 ];
@@ -131,7 +131,7 @@ export default function StatisticsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -232,7 +232,7 @@ export default function StatisticsPage() {
                       <Line 
                         type="monotone" 
                         dataKey="catch" 
-                        stroke="#0066CC" 
+                        stroke="var(--nafaa-ocean)" 
                         strokeWidth={3}
                         name="Catch (MT)"
                       />
@@ -349,7 +349,7 @@ export default function StatisticsPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
               Explore Detailed Statistics
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">

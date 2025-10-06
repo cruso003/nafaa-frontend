@@ -15,10 +15,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NaFAA - National Fisheries & Aquaculture Authority | Republic of Liberia",
-  description: "Official website of the National Fisheries and Aquaculture Authority of the Republic of Liberia. Sustainable fisheries management, licensing, aquaculture development, and marine resource conservation.",
+  title: "National Fisheries and Aquaculture Authority (NaFAA) | Republic of Liberia",
+  description: "Official website of the National Fisheries and Aquaculture Authority (NaFAA) of the Republic of Liberia. Sustainable fisheries management, licensing, aquaculture development, and marine resource conservation.",
   keywords: [
     "NaFAA",
+    "National Fisheries and Aquaculture Authority",
     "Liberia",
     "Fisheries",
     "Aquaculture",
@@ -28,12 +29,12 @@ export const metadata: Metadata = {
     "Sustainable Fishing",
     "West Africa",
   ],
-  authors: [{ name: "National Fisheries & Aquaculture Authority" }],
+  authors: [{ name: "National Fisheries and Aquaculture Authority" }],
   openGraph: {
-    title: "NaFAA - National Fisheries & Aquaculture Authority",
+    title: "National Fisheries and Aquaculture Authority (NaFAA)",
     description: "Sustainable fisheries management and aquaculture development in Liberia",
     url: "https://nafaa.gov.lr",
-    siteName: "NaFAA",
+    siteName: "National Fisheries and Aquaculture Authority",
     locale: "en_US",
     type: "website",
   },

@@ -207,8 +207,8 @@ export default function CatchDataPage() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Area type="monotone" dataKey="tuna" stackId="1" stroke="#002868" fill="#002868" name="Tuna" />
-                    <Area type="monotone" dataKey="snapper" stackId="1" stroke="#0066CC" fill="#0066CC" name="Snapper" />
+                    <Area type="monotone" dataKey="tuna" stackId="1" stroke="var(--nafaa-ocean)" fill="var(--nafaa-ocean)" name="Tuna" />
+                    <Area type="monotone" dataKey="snapper" stackId="1" stroke="var(--nafaa-ocean)" fill="var(--nafaa-ocean)" name="Snapper" />
                     <Area type="monotone" dataKey="grouper" stackId="1" stroke="#00A86B" fill="#00A86B" name="Grouper" />
                     <Area type="monotone" dataKey="other" stackId="1" stroke="#C60C30" fill="#C60C30" name="Other" />
                   </AreaChart>
@@ -237,8 +237,8 @@ export default function CatchDataPage() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="q1" fill="#002868" name="Q1" />
-                    <Bar dataKey="q2" fill="#0066CC" name="Q2" />
+                    <Bar dataKey="q1" fill="var(--nafaa-ocean)" name="Q1" />
+                    <Bar dataKey="q2" fill="var(--nafaa-ocean)" name="Q2" />
                     <Bar dataKey="q3" fill="#00A86B" name="Q3" />
                     <Bar dataKey="q4" fill="#C60C30" name="Q4" />
                   </BarChart>

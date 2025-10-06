@@ -177,7 +177,7 @@ export default function InsightsPage() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold text-[#002868] mb-6">Key Insights 2024</h2>
+          <h2 className="text-2xl font-bold text-nafaa-ocean mb-6">Key Insights 2024</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {insights.map((insight, index) => {
               const Icon = insight.icon;
@@ -219,7 +219,7 @@ export default function InsightsPage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold text-[#002868] mb-6">Key Findings</h2>
+          <h2 className="text-2xl font-bold text-nafaa-ocean mb-6">Key Findings</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {keyFindings.map((finding, index) => (
               <Card key={finding.title}>
@@ -249,7 +249,7 @@ export default function InsightsPage() {
           viewport={{ once: true }}
         >
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-[#002868]">Reports & Publications</h2>
+            <h2 className="text-2xl font-bold text-nafaa-ocean">Reports & Publications</h2>
             <Button variant="outline" asChild>
               <Link href="/publications">View All Publications</Link>
             </Button>

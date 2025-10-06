@@ -159,7 +159,7 @@ export default function PublicationsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#002868] via-[#0066CC] to-[#002868] text-white py-20">
+      <section className="relative bg-gradient-to-br from-nafaa-ocean via-nafaa-ocean to-nafaa-ocean text-white py-20">
         <div className="absolute inset-0 bg-[url('/waves-pattern.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -238,7 +238,7 @@ export default function PublicationsPage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-2xl font-bold text-[#002868] mb-6">Featured Publications</h2>
+            <h2 className="text-2xl font-bold text-nafaa-ocean mb-6">Featured Publications</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {featuredPublications.map((pub, index) => (
                 <Card key={pub.id} className="hover:shadow-lg transition-shadow">
@@ -289,7 +289,7 @@ export default function PublicationsPage() {
           viewport={{ once: true }}
         >
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-[#002868]">
+            <h2 className="text-2xl font-bold text-nafaa-ocean">
               {searchQuery || selectedCategory !== "All Categories"
                 ? `Results (${filteredPublications.length})`
                 : "All Publications"}
@@ -376,7 +376,7 @@ export default function PublicationsPage() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <Card className="bg-gradient-to-r from-[#002868] to-[#0066CC] text-white">
+          <Card className="bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white">
             <CardContent className="pt-6">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>

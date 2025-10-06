@@ -17,7 +17,7 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#001845] via-[#002868] to-[#003A8C]">
+    <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-nafaa-ocean-dark via-nafaa-ocean to-[#003A8C]">
       {/* Animated Background */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <Image
@@ -27,7 +27,7 @@ export function HeroSection() {
           className="object-cover opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001845]/95 via-[#002868]/85 to-[#002868]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-nafaa-ocean-dark/95 via-nafaa-ocean/85 to-nafaa-ocean/75" />
       </motion.div>
 
       {/* Animated particles/waves */}
@@ -55,7 +55,7 @@ export function HeroSection() {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#002868]/80 via-transparent to-transparent z-0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-nafaa-ocean/80 via-transparent to-transparent z-0" />
 
       {/* Content */}
       <motion.div style={{ opacity }} className="relative z-10 max-w-7xl mx-auto px-4 py-20">
@@ -190,26 +190,19 @@ export function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Premium Wave Divider */}
+      {/* Clean Wave Divider */}
       <div className="absolute bottom-0 left-0 right-0 z-10">
         <svg
-          viewBox="0 0 1440 120"
+          viewBox="0 0 1440 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-auto"
           preserveAspectRatio="none"
         >
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V120Z"
-            fill="white"
-            opacity="0.1"
-          />
           <path
-            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V120Z"
+            d="M0,40 C240,10 480,70 720,40 C960,10 1200,70 1440,40 L1440,80 L0,80 Z"
             fill="white"
+            className="drop-shadow-lg"
           />
         </svg>
       </div>

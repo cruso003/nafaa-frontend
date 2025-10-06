@@ -54,7 +54,7 @@ export function PublicationsSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#002868] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
             Publications & Reports
           </h2>
           <p className="text-lg text-slate-600">
@@ -120,7 +120,7 @@ export function PublicationsSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#002868] text-[#002868] hover:bg-[#002868] hover:text-white"
+              className="border-nafaa-ocean text-nafaa-ocean hover:bg-nafaa-ocean hover:text-white"
             >
               View All Publications
               <ArrowRight className="ml-2 h-5 w-5" />
