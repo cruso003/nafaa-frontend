@@ -45,7 +45,7 @@ export function SiteHeader() {
               <div className="text-xs md:text-sm lg:text-base font-bold text-nafaa-ocean">
                 National Fisheries and Aquaculture Authority
               </div>
-              <div className="text-[10px] md:text-xs text-slate-600">Republic of Liberia</div>
+              {/* <div className="text-[10px] md:text-xs text-slate-600">Republic of Liberia</div> */}
             </div>
           </Link>
 
