@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <defs>
+    <pattern id="fish-pattern" x="0" y="0" width="200" height="120" patternUnits="userSpaceOnUse">
+      <path d="M20,60 Q40,40 60,60 T100,60" stroke="currentColor" stroke-width="2" fill="none" opacity="0.2"/>
+      <circle cx="105" cy="60" r="3" fill="currentColor" opacity="0.2"/>
+      <path d="M110,55 L120,60 L110,65 Z" fill="currentColor" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="120" fill="url(#fish-pattern)"/>
+</svg>

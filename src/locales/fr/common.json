@@ -1,0 +1,47 @@
+{
+  "site": {
+    "name": "NaFAA",
+    "fullName": "Autorité Nationale des Pêches et de l'Aquaculture",
+    "tagline": "République du Libéria",
+    "description": "Gestion durable des pêches et développement de l'aquaculture"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "statistics": "Statistiques",
+    "resources": "Ressources",
+    "news": "Actualités & Médias",
+    "opportunities": "Opportunités",
+    "portal": "Portail Client"
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "services": "Services",
+    "contactUs": "Nous Contacter",
+    "followUs": "Suivez-nous",
+    "copyright": "© 2024 Autorité Nationale des Pêches et de l'Aquaculture. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "accessibility": "Accessibilité"
+  },
+  "common": {
+    "learnMore": "En Savoir Plus",
+    "readMore": "Lire Plus",
+    "viewAll": "Voir Tout",
+    "search": "Rechercher",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Succès",
+    "close": "Fermer",
+    "confirm": "Confirmer"
+  }
+}

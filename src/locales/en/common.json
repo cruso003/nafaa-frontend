@@ -1,0 +1,47 @@
+{
+  "site": {
+    "name": "NaFAA",
+    "fullName": "National Fisheries & Aquaculture Authority",
+    "tagline": "Republic of Liberia",
+    "description": "Sustainable fisheries management and aquaculture development"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "statistics": "Statistics",
+    "resources": "Resources",
+    "news": "News & Media",
+    "opportunities": "Opportunities",
+    "portal": "Client Portal"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactUs": "Contact Us",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 National Fisheries & Aquaculture Authority. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "accessibility": "Accessibility"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "search": "Search",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "close": "Close",
+    "confirm": "Confirm"
+  }
+}

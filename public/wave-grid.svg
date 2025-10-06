@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M32,2 Q40,10 48,2 T64,2 L64,64 L0,64 L0,2 Q8,10 16,2 T32,2" fill="currentColor" opacity="0.1"/>
+  <path d="M16,18 Q24,26 32,18 T48,18 T64,18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <path d="M16,34 Q24,42 32,34 T48,34 T64,34" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <path d="M16,50 Q24,58 32,50 T48,50 T64,50" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
+</svg>

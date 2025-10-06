@@ -1,0 +1,15 @@
+{
+  "login": "Login",
+  "email": "Email Address",
+  "password": "Password",
+  "rememberMe": "Remember me",
+  "forgotPassword": "Forgot password?",
+  "signIn": "Sign In",
+  "dashboard": "Dashboard",
+  "myVessels": "My Vessels",
+  "myLicenses": "My Licenses",
+  "reports": "Reports",
+  "payments": "Payments",
+  "settings": "Settings",
+  "logout": "Logout"
+}
