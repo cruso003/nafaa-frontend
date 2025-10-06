@@ -11,39 +11,29 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Search, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // Navigate to search results or handle search
-      window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
-    }
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex min-h-24 py-3 items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 flex-shrink">
             <Image
               src="/nafaa-logo.png"
               alt="NaFAA Logo"
               width={60}
               height={60}
-              className="h-14 w-auto"
+              className="h-14 w-auto flex-shrink-0"
             />
             <div className="hidden sm:block">
-              <div className="text-xs md:text-sm lg:text-base font-bold text-nafaa-ocean">
-                National Fisheries and Aquaculture Authority
+              <div className="text-xs md:text-sm lg:text-base font-bold text-nafaa-ocean leading-tight">
+                National Fisheries & Aquaculture Authority
               </div>
               {/* <div className="text-[10px] md:text-xs text-slate-600">Republic of Liberia</div> */}
             </div>
@@ -182,13 +172,6 @@ export function SiteHeader() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={() => setSearchOpen(true)}
-            >
-              <Search className="h-5 w-5" />
-            </Button>
             <Link href="/portal">
               <Button
                 variant="outline"
@@ -211,73 +194,6 @@ export function SiteHeader() {
             </Button>
           </div>
         </div>
-
-        {/* Search Modal */}
-        {searchOpen && (
-          <div className="fixed inset-0 bg-black/50 z-[60] flex items-start justify-center pt-20" onClick={() => setSearchOpen(false)}>
-            <div className="bg-white rounded-lg shadow-2xl w-full max-w-2xl mx-4" onClick={(e) => e.stopPropagation()}>
-              <form onSubmit={handleSearch} className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Search className="h-6 w-6 text-nafaa-ocean" />
-                  <input
-                    type="text"
-                    placeholder="Search NaFAA website..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="flex-1 text-lg outline-none"
-                    autoFocus
-                  />
-                  <Button 
-                    type="button"
-                    variant="ghost" 
-                    size="icon"
-                    onClick={() => setSearchOpen(false)}
-                  >
-                    <X className="h-5 w-5" />
-                  </Button>
-                </div>
-                <div className="border-t pt-4">
-                  <p className="text-sm text-gray-600 mb-3">Quick Links:</p>
-                  <div className="grid grid-cols-2 gap-2">
-                    <Link 
-                      href="/services/vessel-registration" 
-                      className="text-sm text-nafaa-ocean hover:underline"
-                      onClick={() => setSearchOpen(false)}
-                    >
-                      Vessel Registration
-                    </Link>
-                    <Link 
-                      href="/services/fishing-licenses" 
-                      className="text-sm text-nafaa-ocean hover:underline"
-                      onClick={() => setSearchOpen(false)}
-                    >
-                      Fishing Licenses
-                    </Link>
-                    <Link 
-                      href="/statistics" 
-                      className="text-sm text-nafaa-ocean hover:underline"
-                      onClick={() => setSearchOpen(false)}
-                    >
-                      Statistics
-                    </Link>
-                    <Link 
-                      href="/contact" 
-                      className="text-sm text-nafaa-ocean hover:underline"
-                      onClick={() => setSearchOpen(false)}
-                    >
-                      Contact Us
-                    </Link>
-                  </div>
-                </div>
-                <div className="mt-4 flex justify-end">
-                  <Button type="submit" className="bg-nafaa-ocean hover:bg-nafaa-ocean-dark">
-                    Search
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
 
         {/* Mobile Menu - Full Screen Overlay */}
         {mobileMenuOpen && (

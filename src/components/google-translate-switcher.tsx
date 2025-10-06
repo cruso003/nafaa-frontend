@@ -41,21 +41,42 @@ export function GoogleTranslateSwitcher() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
+    // Detect current language from cookie immediately
+    const detectLanguage = () => {
+      // Check cookie first
+      const cookies = document.cookie.split(';');
+      for (const cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        if (name === 'googtrans') {
+          const lang = value.split('/')[2];
+          if (lang && lang !== 'en') {
+            setCurrentLang(lang);
+            return;
+          }
+        }
+      }
+      
+      // Check localStorage as backup
+      const savedLang = localStorage.getItem('googtrans');
+      if (savedLang) {
+        const lang = savedLang.split('/')[2];
+        if (lang && lang !== 'en') {
+          setCurrentLang(lang);
+          return;
+        }
+      }
+    };
+    
+    // Detect immediately on mount
+    detectLanguage();
+    
     // Wait for Google Translate to be ready
     const checkReady = setInterval(() => {
       const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
       if (select) {
         setIsReady(true);
         clearInterval(checkReady);
-        
-        // Get initial language
-        const savedLang = localStorage.getItem('googtrans');
-        if (savedLang) {
-          const lang = savedLang.split('/')[2];
-          if (lang && lang !== 'en') {
-            setCurrentLang(lang);
-          }
-        }
+        detectLanguage();
       }
     }, 100);
 
@@ -65,15 +86,35 @@ export function GoogleTranslateSwitcher() {
   const changeLanguage = (langCode: string) => {
     setCurrentLang(langCode);
     
-    // Set the cookie that Google Translate uses
-    const domain = window.location.hostname;
-    document.cookie = `googtrans=/en/${langCode}; path=/; domain=${domain}`;
+    // Find the Google Translate select element
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
     
-    // Save to localStorage
-    localStorage.setItem('googtrans', `/en/${langCode}`);
-    
-    // Reload page to apply translation
-    window.location.reload();
+    if (select) {
+      // Set the select value
+      select.value = langCode;
+      
+      // Trigger change event to activate translation
+      const event = new Event('change', { bubbles: true });
+      select.dispatchEvent(event);
+    } else {
+      // Fallback: Set cookies if widget not ready yet
+      const domain = window.location.hostname;
+      
+      if (langCode === 'en') {
+        // Reset to English
+        document.cookie = `googtrans=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+        document.cookie = `googtrans=/en/en; path=/; domain=${domain}`;
+        localStorage.removeItem('googtrans');
+        localStorage.setItem('googtrans', '/en/en');
+      } else {
+        // Set translation cookie
+        document.cookie = `googtrans=/en/${langCode}; path=/; domain=${domain}`;
+        localStorage.setItem('googtrans', `/en/${langCode}`);
+      }
+      
+      // Reload page to apply translation
+      window.location.reload();
+    }
   };
 
   const currentLanguage = languages.find((lang) => lang.code === currentLang) || languages[0];
