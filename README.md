@@ -1,4 +1,4 @@
-# 🎉 NaFAA Frontend - Team 2
+# 🎉 NaFAA Frontend
 
 > **Status:** ✅ Setup Complete - Ready for Development  
 > **Tech Stack:** Next.js 15 + React 19 + Tailwind v4 + shadcn/ui + Framer Motion + TanStack Query
@@ -112,17 +112,6 @@ bun run format       # Format code
 
 ---
 
-## 🎯 Next Steps for Team 2
-
-1. ✅ Setup Complete
-2. 🎨 Start building homepage sections
-3. 📄 Create About, Services, Publications pages
-4. 🤝 Coordinate with Team 1 for backend
-
-See `TEAM_2_REFACTOR_ASSIGNMENT.md` in project root for your tasks.
-
----
-
 ## 🆘 Need Help?
 
 Check the documentation files above or visit:
@@ -132,9 +121,7 @@ Check the documentation files above or visit:
 
 ---
 
-**Built with ❤️ by Team 2 for NaFAA**
-
-## Deploy on Vercel
+## Deployed on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
