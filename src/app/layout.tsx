@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import ChatBot from "@/components/ChatBot";
 import { Toaster } from "@/components/ui/toaster";
+import { GoogleTranslateContainer } from "@/components/google-translate-container";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,68 +48,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Google Translate initialization - delayed until after React hydration */}
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Prevent initialization during SSR
-              window.googleTranslateElementInit = function() {
-                try {
-                  if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
-                    new google.translate.TranslateElement({
-                      pageLanguage: 'en',
-                      includedLanguages: 'en,fr,es,pt,ar,zh-CN,zh-TW,ja,ko,ru,de,it,nl,hi,sw,am',
-                      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                      autoDisplay: false,
-                      multilanguagePage: true
-                    }, 'google_translate_element');
-                  }
-                } catch (e) {
-                  console.error('Google Translate initialization failed:', e);
-                }
-              };
-              
-              // Load script only after DOM is ready (after hydration)
-              if (typeof window !== 'undefined') {
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', function() {
-                    setTimeout(function() {
-                      var script = document.createElement('script');
-                      script.type = 'text/javascript';
-                      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-                      script.async = true;
-                      document.head.appendChild(script);
-                    }, 100);
-                  });
-                } else {
-                  setTimeout(function() {
-                    var script = document.createElement('script');
-                    script.type = 'text/javascript';
-                    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-                    script.async = true;
-                    document.head.appendChild(script);
-                  }, 100);
-                }
-              }
-            `,
-          }}
-        />
-      </head>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <Providers>
           <GovernmentBanner />
           <SiteHeader />
           {children}
           <SiteFooter />
-          {/* Hidden Google Translate Widget - controlled by custom switcher */}
-          {/* suppressHydrationWarning prevents hydration mismatch from Google Translate DOM modifications */}
-          <div 
-            id="google_translate_element" 
-            suppressHydrationWarning
-            style={{ display: 'none', position: 'absolute', left: '-9999px', visibility: 'hidden' }} 
-          />
+          {/* Google Translate Widget - Client-side only, after hydration */}
+          <GoogleTranslateContainer />
           {/* AI ChatBot */}
           <ChatBot />
           {/* Toast Notifications */}

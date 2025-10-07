@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Ship, FileText, RefreshCw, ClipboardList, CreditCard, ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const services = [
   {
@@ -73,32 +74,60 @@ const itemVariants = {
   },
 };
 
+// Generate background elements - stable across renders
+const generateBackgroundElements = () => {
+  return [...Array(15)].map((_, i) => ({
+    color: i % 2 === 0 ? 'var(--nafaa-ocean)' : '#00A86B',
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    duration: 8 + Math.random() * 4,
+    delay: Math.random() * 2,
+  }));
+};
+
 export function ServicesSection() {
+  const [backgroundElements, setBackgroundElements] = useState<Array<{
+    color: string;
+    left: number;
+    top: number;
+    duration: number;
+    delay: number;
+  }>>([]);
+  const [mounted, setMounted] = useState(false);
+
+  // Generate background elements only on client side after mount
+  useEffect(() => {
+    setBackgroundElements(generateBackgroundElements());
+    setMounted(true);
+  }, []);
+
   return (
     <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-64 h-64 rounded-full opacity-5"
-            style={{
-              background: `radial-gradient(circle, ${i % 2 === 0 ? 'var(--nafaa-ocean)' : '#00A86B'} 0%, transparent 70%)`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.05, 0.1, 0.05],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
+      {/* Animated background elements - only render after mount */}
+      {mounted && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {backgroundElements.map((element, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-64 h-64 rounded-full opacity-5"
+              style={{
+                background: `radial-gradient(circle, ${element.color} 0%, transparent 70%)`,
+                left: `${element.left}%`,
+                top: `${element.top}%`,
+              }}
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.05, 0.1, 0.05],
+              }}
+              transition={{
+                duration: element.duration,
+                repeat: Infinity,
+                delay: element.delay,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Section Header */}

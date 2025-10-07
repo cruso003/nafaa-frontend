@@ -3,11 +3,24 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Ship, FileText, TrendingUp, Waves } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+
+// Generate particle positions - stable across renders
+const generateParticles = () => {
+  return [...Array(20)].map(() => ({
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    duration: 3 + Math.random() * 2,
+    delay: Math.random() * 2,
+  }));
+};
 
 export function HeroSection() {
   const ref = useRef(null);
+  const [particles, setParticles] = useState<Array<{left: number, top: number, duration: number, delay: number}>>([]);
+  const [mounted, setMounted] = useState(false);
+  
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -15,6 +28,12 @@ export function HeroSection() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  // Generate particles only on client side after mount
+  useEffect(() => {
+    setParticles(generateParticles());
+    setMounted(true);
+  }, []);
 
   return (
     <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-nafaa-ocean-dark via-nafaa-ocean to-[#003A8C]">
@@ -30,29 +49,31 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-nafaa-ocean-dark/95 via-nafaa-ocean/85 to-nafaa-ocean/75" />
       </motion.div>
 
-      {/* Animated particles/waves */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
+      {/* Animated particles/waves - only render after mount */}
+      {mounted && (
+        <div className="absolute inset-0 overflow-hidden">
+          {particles.map((particle, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
+              style={{
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.2, 0.5, 0.2],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: particle.duration,
+                repeat: Infinity,
+                delay: particle.delay,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-nafaa-ocean/80 via-transparent to-transparent z-0" />
