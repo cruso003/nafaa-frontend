@@ -25,6 +25,8 @@ import {
   Eye,
   XCircle,
   RefreshCw,
+  MessageSquare,
+  HelpCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -149,6 +151,14 @@ const stats = [
     href: "/portal/licenses",
   },
   {
+    icon: MessageSquare,
+    label: "Support Tickets",
+    value: "2",
+    change: "1 open",
+    color: "orange",
+    href: "/portal/support",
+  },
+  {
     icon: FileText,
     label: "Reports Submitted",
     value: "12",
@@ -224,6 +234,31 @@ const notifications = [
     message: "Your payment of $150 has been confirmed",
     action: "View Receipt",
     href: "/portal/payments",
+  },
+  {
+    id: 4,
+    type: "info",
+    message: "Support replied to your ticket about vessel registration",
+    action: "View Ticket",
+    href: "/portal/support",
+  },
+];
+
+// Mock support tickets for dashboard widget
+const recentTickets = [
+  {
+    id: "TKT-2024-001",
+    subject: "Issue with vessel registration payment",
+    status: "Open",
+    priority: "High",
+    createdDate: "2024-10-05",
+  },
+  {
+    id: "TKT-2024-002",
+    subject: "Cannot access license renewal page",
+    status: "In Progress",
+    priority: "Medium",
+    createdDate: "2024-10-03",
   },
 ];
 
@@ -708,9 +743,9 @@ export default function DashboardPage() {
                     color: "purple",
                   },
                   {
-                    icon: Download,
-                    label: "Download License",
-                    href: "/portal/licenses",
+                    icon: MessageSquare,
+                    label: "Get Support",
+                    href: "/portal/support",
                     color: "orange",
                   },
                 ].map((action) => (
@@ -882,11 +917,91 @@ export default function DashboardPage() {
               </div>
             </motion.div>
 
-            {/* Upcoming Deadlines */}
+            {/* Support Tickets */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
+              className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-gray-900">
+                  Recent Support Tickets
+                </h3>
+                <Link href="/portal/support">
+                  <Button variant="ghost" size="sm" className="h-8 text-xs">
+                    View All
+                    <ChevronRight className="ml-1 h-3 w-3" />
+                  </Button>
+                </Link>
+              </div>
+              {recentTickets.length > 0 ? (
+                <div className="space-y-3">
+                  {recentTickets.map((ticket) => (
+                    <Link
+                      key={ticket.id}
+                      href="/portal/support"
+                      className="block"
+                    >
+                      <div className="p-3 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Badge variant="outline" className="text-xs font-mono">
+                            {ticket.id}
+                          </Badge>
+                          <Badge
+                            variant="outline"
+                            className={`text-xs ${
+                              ticket.status === "Open"
+                                ? "bg-blue-50 text-blue-700 border-blue-200"
+                                : "bg-yellow-50 text-yellow-700 border-yellow-200"
+                            }`}
+                          >
+                            {ticket.status}
+                          </Badge>
+                        </div>
+                        <h4 className="font-semibold text-sm text-gray-900 mb-1 line-clamp-1">
+                          {ticket.subject}
+                        </h4>
+                        <div className="flex items-center justify-between">
+                          <Badge
+                            variant="outline"
+                            className={`text-xs ${
+                              ticket.priority === "High"
+                                ? "bg-orange-50 text-orange-700 border-orange-200"
+                                : "bg-slate-50 text-slate-700 border-slate-200"
+                            }`}
+                          >
+                            {ticket.priority} Priority
+                          </Badge>
+                          <span className="text-xs text-gray-500">
+                            {ticket.createdDate}
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-8">
+                  <MessageSquare className="h-12 w-12 text-gray-300 mx-auto mb-3" />
+                  <p className="text-sm text-gray-600 mb-3">
+                    No support tickets yet
+                  </p>
+                  <Link href="/portal/support">
+                    <Button size="sm" variant="outline">
+                      <HelpCircle className="h-4 w-4 mr-2" />
+                      Get Support
+                    </Button>
+                  </Link>
+                </div>
+              )}
+            </motion.div>
+
+            {/* Upcoming Deadlines */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6 }}
               className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
             >
               <h3 className="text-lg font-bold text-gray-900 mb-4">
@@ -954,20 +1069,23 @@ export default function DashboardPage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.7 }}
               className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl shadow-sm p-6 text-white"
             >
-              <h3 className="text-lg font-bold mb-2">Need Help?</h3>
+              <div className="flex items-center gap-2 mb-2">
+                <HelpCircle className="h-5 w-5" />
+                <h3 className="text-lg font-bold">Need Help?</h3>
+              </div>
               <p className="text-sm opacity-90 mb-4">
-                Our support team is here to assist you with any questions.
+                Our support team is here to assist you with any questions or issues.
               </p>
-              <Link href="/about/contact">
+              <Link href="/portal/support">
                 <Button
                   variant="secondary"
                   className="w-full bg-white text-blue-700 hover:bg-gray-100"
                 >
-                  Contact Support
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  Create Support Ticket
                 </Button>
               </Link>
             </motion.div>
