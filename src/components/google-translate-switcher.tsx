@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Languages, ChevronDown } from "lucide-react";
 import {
@@ -30,92 +30,86 @@ const languages = [
   { code: "am", name: "አማርኛ" },
 ];
 
-declare global {
-  interface Window {
-    googleTranslateElementInit?: () => void;
-  }
-}
-
 export function GoogleTranslateSwitcher() {
-  const [currentLang, setCurrentLang] = useState("en");
-  const [isReady, setIsReady] = useState(false);
+  const [currentLang, setCurrentLang] = useState<string>("en");
+  const [mounted, setMounted] = useState(false);
+  const [widgetReady, setWidgetReady] = useState(false);
 
-  useEffect(() => {
-    // Detect current language from cookie immediately
-    const detectLanguage = () => {
-      // Check cookie first
-      const cookies = document.cookie.split(';');
-      for (const cookie of cookies) {
-        const [name, value] = cookie.trim().split('=');
-        if (name === 'googtrans') {
-          const lang = value.split('/')[2];
-          if (lang && lang !== 'en') {
-            setCurrentLang(lang);
-            return;
-          }
+  // Detect language from cookie
+  const getCookieLang = useCallback((): string => {
+    if (typeof document === 'undefined') return 'en';
+    
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      const [name, value] = cookie.trim().split('=');
+      if (name === 'googtrans') {
+        const match = value.match(/\/[a-z]{2}(-[A-Z]{2})?\/([a-z]{2}(-[A-Z]{2})?)/);
+        if (match && match[2]) {
+          return match[2];
         }
       }
-      
-      // Check localStorage as backup
-      const savedLang = localStorage.getItem('googtrans');
-      if (savedLang) {
-        const lang = savedLang.split('/')[2];
-        if (lang && lang !== 'en') {
-          setCurrentLang(lang);
-          return;
-        }
-      }
-    };
-    
-    // Detect immediately on mount
-    detectLanguage();
-    
-    // Wait for Google Translate to be ready
-    const checkReady = setInterval(() => {
-      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-      if (select) {
-        setIsReady(true);
-        clearInterval(checkReady);
-        detectLanguage();
-      }
-    }, 100);
-
-    return () => clearInterval(checkReady);
+    }
+    return 'en';
   }, []);
 
-  const changeLanguage = (langCode: string) => {
+  // Initialize on mount
+  useEffect(() => {
+    setMounted(true);
+    const detected = getCookieLang();
+    setCurrentLang(detected);
+
+    // Wait for widget
+    let attempts = 0;
+    const interval = setInterval(() => {
+      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (select) {
+        setWidgetReady(true);
+        clearInterval(interval);
+      } else if (++attempts > 30) {
+        clearInterval(interval);
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [getCookieLang]);
+
+  const changeLanguage = useCallback((langCode: string) => {
     setCurrentLang(langCode);
-    
-    // Find the Google Translate select element
+
+    // Get widget select
     const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
     
-    if (select) {
-      // Set the select value
+    if (select && widgetReady) {
+      // Change via widget (no reload needed)
       select.value = langCode;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
       
-      // Trigger change event to activate translation
-      const event = new Event('change', { bubbles: true });
-      select.dispatchEvent(event);
+      // Verify change after short delay
+      setTimeout(() => {
+        const newLang = getCookieLang();
+        if (newLang !== langCode) {
+          // Fallback: set cookie and reload
+          document.cookie = `googtrans=/en/${langCode}; path=/; max-age=31536000`;
+          window.location.reload();
+        }
+      }, 500);
     } else {
-      // Fallback: Set cookies if widget not ready yet
-      const domain = window.location.hostname;
-      
-      if (langCode === 'en') {
-        // Reset to English
-        document.cookie = `googtrans=; path=/; domain=${domain}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-        document.cookie = `googtrans=/en/en; path=/; domain=${domain}`;
-        localStorage.removeItem('googtrans');
-        localStorage.setItem('googtrans', '/en/en');
-      } else {
-        // Set translation cookie
-        document.cookie = `googtrans=/en/${langCode}; path=/; domain=${domain}`;
-        localStorage.setItem('googtrans', `/en/${langCode}`);
-      }
-      
-      // Reload page to apply translation
+      // Widget not ready: set cookie and reload
+      document.cookie = `googtrans=/en/${langCode}; path=/; max-age=31536000`;
       window.location.reload();
     }
-  };
+  }, [widgetReady, getCookieLang]);
+
+  // Don't render until mounted (prevents hydration issues)
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="sm" className="gap-2 h-8 px-3 text-white hover:bg-white/10 hover:text-white" disabled>
+        <Languages className="h-4 w-4" />
+        <span className="text-xs font-medium">English</span>
+        <ChevronDown className="h-3 w-3 opacity-70" />
+      </Button>
+    );
+  }
 
   const currentLanguage = languages.find((lang) => lang.code === currentLang) || languages[0];
 

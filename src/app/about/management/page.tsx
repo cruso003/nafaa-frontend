@@ -10,12 +10,12 @@ import Image from "next/image";
 const managementTeam = [
   {
     id: 1,
-    name: "Hon. Emma Metieh Glassco",
+    name: "Hon. J. Cyrus Saygbe, Sr",
     title: "Director General",
     department: "Executive Office",
     icon: Briefcase,
-    image: "/management/director-general.jpg",
-    bio: "Director General Emma Metieh Glassco leads NaFAA with extensive experience in fisheries management, sustainable development, and marine resource conservation. She oversees all strategic initiatives and ensures NaFAA delivers on its mandate.",
+    image: "/officials/director.jpg",
+    bio: "Director General J. Cyrus Saygbe, Sr leads NaFAA with extensive experience in fisheries management, sustainable development, and marine resource conservation. He oversees all strategic initiatives and ensures NaFAA delivers on its mandate to protect and develop Liberia's fisheries resources.",
     email: "director@nafaa.gov.lr",
     phone: "+231-XXX-XXXX",
     responsibilities: [
@@ -147,19 +147,13 @@ export default function ManagementPage() {
               <Card className="border-0 shadow-2xl overflow-hidden">
                 <div className="grid md:grid-cols-5 gap-0">
                   {/* Image Section */}
-                  <div className="md:col-span-2 relative h-96 md:h-auto bg-gradient-to-br from-nafaa-ocean to-nafaa-ocean">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-48 h-48 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                        <Briefcase className="w-24 h-24 text-white/50" />
-                      </div>
-                    </div>
-                    {/* Placeholder for actual image */}
-                    {/* <Image
+                  <div className="md:col-span-2 relative h-96 md:h-auto">
+                    <Image
                       src={managementTeam[0].image}
                       alt={managementTeam[0].name}
                       fill
                       className="object-cover"
-                    /> */}
+                    />
                   </div>
 
                   {/* Content Section */}
