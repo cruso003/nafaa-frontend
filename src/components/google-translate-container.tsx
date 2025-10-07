@@ -58,12 +58,21 @@ export function GoogleTranslateContainer() {
           script.type = 'text/javascript';
           script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
           script.async = true;
+          script.onerror = () => {
+            console.error('Failed to load Google Translate script');
+          };
           document.head.appendChild(script);
+        } else {
+          // Script already loaded, trigger init
+          if (window.google?.translate) {
+            window.googleTranslateElementInit?.();
+          }
         }
       };
 
       // Delay script loading to ensure React hydration is complete
-      const timer = setTimeout(loadScript, 1000);
+      // Increased delay for production reliability
+      const timer = setTimeout(loadScript, 2000);
 
       return () => {
         clearTimeout(timer);
