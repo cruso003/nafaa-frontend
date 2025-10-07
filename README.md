@@ -1,4 +1,4 @@
-# 🎉 NaFAA Frontend
+# 🎉 NaFAA Frontend - 2025
 
 > **Status:** ✅ Initial Development Complete - Reviewing   
 > **Tech Stack:** Next.js 15 + React 19 + Tailwind v4 + shadcn/ui + Framer Motion + TanStack Query
