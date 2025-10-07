@@ -70,7 +70,7 @@ const newsArticles = {
       <h2>Reducing Processing Time</h2>
       <p>Under the old system, vessel registration could take anywhere from 2-4 weeks, requiring multiple in-person visits to NaFAA offices. The new online platform reduces this to just 5-7 business days, with expedited processing available for urgent cases.</p>
 
-      <p>"This is a transformative moment for our fishing industry," said Director General J. Cyrus Saygbe, Sr. "By embracing digital technology, we're making it easier for fishermen to comply with regulations while reducing administrative burdens on our staff."</p>
+      <p>"This is a transformative moment for our fishing industry," said Acting Director General J. Cyrus Saygbe, Sr. "By embracing digital technology, we're making it easier for fishermen to comply with regulations while reducing administrative burdens on our staff."</p>
 
       <h2>Security and Data Protection</h2>
       <p>The system incorporates advanced security measures to protect users' personal and vessel information. All data is encrypted and stored on secure servers, with regular backups to prevent data loss.</p>

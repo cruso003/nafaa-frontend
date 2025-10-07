@@ -62,7 +62,7 @@ export default function OrganizationPage() {
 
             {/* Visual Organization Chart */}
             <div className="space-y-8">
-              {/* Level 1: Director General */}
+              {/* Level 1: Acting Director General */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -75,7 +75,7 @@ export default function OrganizationPage() {
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Building2 className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-2xl">Director General</CardTitle>
+                    <CardTitle className="text-2xl">Acting Director General</CardTitle>
                     <p className="text-blue-100 text-sm">Chief Executive Officer</p>
                   </CardHeader>
                   <CardContent className="pt-4 text-center text-sm text-gray-600">

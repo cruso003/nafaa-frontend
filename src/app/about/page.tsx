@@ -80,7 +80,7 @@ export default function AboutPage() {
                 className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
               >
                 <Image
-                  src="/about-office.jpg"
+                  src="/fishermen-3.jpg"
                   alt="NaFAA Office"
                   fill
                   className="object-cover"

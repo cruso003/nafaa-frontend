@@ -2,22 +2,19 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Users, Mail, Phone, Ship, Shield, TrendingUp, Briefcase } from "lucide-react";
+import { Users, Ship, Shield, TrendingUp, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const managementTeam = [
   {
     id: 1,
-    name: "Hon. J. Cyrus Saygbe, Sr",
-    title: "Director General",
+    name: "J. Cyrus Saygbe, Sr",
+    title: "Acting Director General",
     department: "Executive Office",
     icon: Briefcase,
     image: "/officials/director.jpg",
-    bio: "Director General J. Cyrus Saygbe, Sr leads NaFAA with extensive experience in fisheries management, sustainable development, and marine resource conservation. He oversees all strategic initiatives and ensures NaFAA delivers on its mandate to protect and develop Liberia's fisheries resources.",
-    email: "director@nafaa.gov.lr",
-    phone: "+231-XXX-XXXX",
+    bio: "Acting Director General J. Cyrus Saygbe, Sr leads NaFAA with extensive experience in fisheries management, sustainable development, and marine resource conservation. He oversees all strategic initiatives and ensures NaFAA delivers on its mandate to protect and develop Liberia's fisheries resources.",
     responsibilities: [
       "Overall strategic leadership and direction",
       "Policy formulation and implementation",
@@ -27,53 +24,32 @@ const managementTeam = [
   },
   {
     id: 2,
-    name: "[Deputy Director Name]",
-    title: "Deputy Director for Operations",
-    department: "Operations Division",
-    icon: Ship,
-    image: "/management/deputy-operations.jpg",
-    bio: "Oversees all operational services including licensing, vessel registration, and day-to-day service delivery to fishing communities and industry stakeholders.",
-    email: "deputy.operations@nafaa.gov.lr",
-    phone: "+231-XXX-XXXX",
+    name: "Hon. Augustine M. Manoballah",
+    title: "Deputy Director General for Administration",
+    department: "Administration Division",
+    icon: Briefcase,
+    image: "/management/deputy-administration.jpg",
+    bio: "Hon. Augustine M. Manoballah is the Deputy Director General for Administration at the National Fisheries and Aquaculture Authority, appointed in February 2018 and reappointed for a second term in February 2022 by H.E. Amb. George M. Weah, President of the Republic of Liberia. He is a high potential business administrator and maritime practitioner with more than 10 years of experience in the business and maritime industry.",
     responsibilities: [
-      "Licensing and permitting services",
-      "Vessel registration and documentation",
-      "Operational service delivery",
-      "Field office coordination",
+      "Administrative operations and management",
+      "Human resources oversight",
+      "General services coordination",
+      "Office management and support services",
     ],
   },
   {
     id: 3,
-    name: "[Deputy Director Name]",
-    title: "Deputy Director for Compliance",
-    department: "Compliance & Enforcement",
-    icon: Shield,
-    image: "/management/deputy-compliance.jpg",
-    bio: "Manages enforcement operations, monitoring, control, and surveillance (MCS) activities to combat illegal, unreported, and unregulated (IUU) fishing.",
-    email: "deputy.compliance@nafaa.gov.lr",
-    phone: "+231-XXX-XXXX",
-    responsibilities: [
-      "Enforcement and compliance monitoring",
-      "IUU fishing prevention",
-      "Port and sea inspections",
-      "Regulatory compliance oversight",
-    ],
-  },
-  {
-    id: 4,
-    name: "[Deputy Director Name]",
-    title: "Deputy Director for Development",
-    department: "Aquaculture & Development",
+    name: "William Y. Boeh",
+    title: "Deputy Director General for Technical Services",
+    department: "Technical Services Division",
     icon: TrendingUp,
-    image: "/management/deputy-development.jpg",
-    bio: "Leads aquaculture development initiatives, capacity building programs, and technical assistance for fishermen and fish farmers across Liberia.",
-    email: "deputy.development@nafaa.gov.lr",
-    phone: "+231-XXX-XXXX",
+    image: "/management/deputy-technical.jpg",
+    bio: "William Y. Boeh serves as Deputy Director General for Technical Services, assisting the Director General to supervise and coordinate the activities of four Divisions within the Department of Technical Services including Research & Statistics, Marine Fisheries and Environment, Monitoring Control Surveillance, and Aquaculture & Inland Fisheries of the National Fisheries and Aquaculture Authority.",
     responsibilities: [
-      "Aquaculture development programs",
-      "Capacity building and training",
-      "Extension services",
-      "Community development initiatives",
+      "Research and statistics coordination",
+      "Marine fisheries and environment oversight",
+      "Monitoring, control, and surveillance",
+      "Aquaculture and inland fisheries development",
     ],
   },
 ];
@@ -159,7 +135,7 @@ export default function ManagementPage() {
                   {/* Content Section */}
                   <div className="md:col-span-3 p-8 lg:p-12">
                     <Badge className="mb-4 bg-gradient-to-r from-nafaa-ocean to-nafaa-ocean text-white border-none">
-                      Director General
+                      Acting Director General
                     </Badge>
                     <h3 className="text-3xl lg:text-4xl font-bold text-nafaa-ocean mb-3">
                       {managementTeam[0].name}
@@ -182,18 +158,6 @@ export default function ManagementPage() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="flex flex-wrap gap-3">
-                      <Button size="sm" className="bg-nafaa-ocean hover:bg-nafaa-ocean-dark">
-                        <Mail className="mr-2 h-4 w-4" />
-                        Email
-                      </Button>
-                      <Button size="sm" variant="outline" className="border-nafaa-ocean text-nafaa-ocean">
-                        <Phone className="mr-2 h-4 w-4" />
-                        Call
-                      </Button>
                     </div>
                   </div>
                 </div>
@@ -237,13 +201,12 @@ export default function ManagementPage() {
                           <member.icon className="w-20 h-20 text-white/50" />
                         </div>
                       </div>
-                      {/* Placeholder for actual image */}
-                      {/* <Image
+                      <Image
                         src={member.image}
                         alt={member.name}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      /> */}
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       
                       <Badge className="absolute top-4 right-4 bg-white/90 text-nafaa-ocean">
@@ -274,23 +237,6 @@ export default function ManagementPage() {
                             </li>
                           ))}
                         </ul>
-                      </div>
-
-                      {/* Contact */}
-                      <div className="space-y-2 pt-4 border-t">
-                        <div className="flex items-center gap-2">
-                          <Mail className="h-4 w-4 text-nafaa-ocean flex-shrink-0" />
-                          <a
-                            href={`mailto:${member.email}`}
-                            className="text-xs text-gray-600 hover:text-nafaa-ocean transition-colors truncate"
-                          >
-                            {member.email}
-                          </a>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Phone className="h-4 w-4 text-nafaa-ocean flex-shrink-0" />
-                          <span className="text-xs text-gray-600">{member.phone}</span>
-                        </div>
                       </div>
                     </CardContent>
                   </Card>

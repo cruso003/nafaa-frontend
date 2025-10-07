@@ -80,16 +80,16 @@ export default function LeadershipPage() {
                   </div>
                   <div className="md:col-span-3 p-6 md:p-8">
                     <Badge className="mb-3 bg-nafaa-ocean text-white">
-                      Director General
+                      Acting Director General
                     </Badge>
                     <h3 className="text-3xl font-bold text-nafaa-ocean mb-2">
-                      Hon. J. Cyrus Saygbe, Sr
+                      J. Cyrus Saygbe, Sr
                     </h3>
-                    <p className="text-gray-600 mb-4">Director General, NaFAA</p>
+                    <p className="text-gray-600 mb-4">Acting Director General, NaFAA</p>
                     
                     <div className="prose prose-gray max-w-none mb-6">
                       <p className="text-gray-700 leading-relaxed">
-                        Hon. J. Cyrus Saygbe, Sr serves as the Director General of the National Fisheries and Aquaculture Authority of Liberia. With extensive experience in fisheries management and marine resource conservation, he leads NaFAA's strategic initiatives to ensure sustainable use of Liberia's marine resources.
+                        J. Cyrus Saygbe, Sr serves as the Acting Director General of the National Fisheries and Aquaculture Authority of Liberia. With extensive experience in fisheries management and marine resource conservation, he leads NaFAA's strategic initiatives to ensure sustainable use of Liberia's marine resources.
                       </p>
                       <p className="text-gray-700 leading-relaxed">
                         Under his leadership, NaFAA continues to strengthen its regulatory framework, promote sustainable fishing practices, and protect Liberia's valuable marine resources for future generations. He works closely with government officials, international partners, and local fishing communities to advance the sector's development.

@@ -27,10 +27,10 @@ const officials = [
   },
   {
     id: 3,
-    name: "Hon. J. Cyrus Saygbe, Sr",
-    title: "Director General, National Fisheries and Aquaculture Authority",
+    name: "J. Cyrus Saygbe, Sr",
+    title: "Acting Director General, National Fisheries and Aquaculture Authority",
     image: "/officials/director.jpg",
-    bio: "Director General J. Cyrus Saygbe, Sr leads NaFAA with extensive experience in fisheries management, sustainable development, and marine resource conservation.",
+    bio: "Acting Director General J. Cyrus Saygbe, Sr leads NaFAA with extensive experience in fisheries management, sustainable development, and marine resource conservation.",
     email: "director@nafaa.gov.lr",
     office: "NaFAA Headquarters, Monrovia",
   },
