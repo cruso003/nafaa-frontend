@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { FileText, Ship, Shield, Waves, TrendingUp, Globe, Building2, BarChart3, Users, Mail } from "lucide-react";
+import { FileText, Ship, Shield, Waves, TrendingUp, Globe, Building2, BarChart3, Users, Mail, DollarSign, TreePine, Search, Briefcase, FileCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,131 +11,179 @@ import Link from "next/link";
 const departments = [
   {
     id: 1,
-    name: "Licensing Division",
-    icon: FileText,
-    gradient: "from-blue-500 to-cyan-500",
-    description: "Manages the issuance, renewal, and administration of fishing licenses, permits, and certificates for commercial, artisanal, and recreational fishing activities.",
-    services: [
-      "Commercial fishing licenses",
-      "Artisanal fishing permits",
-      "Recreational fishing licenses",
-      "Special permits and exemptions",
-      "License renewals and amendments",
-    ],
-    contact: "licensing@nafaa.gov.lr",
-    staff: "15+ Personnel",
-  },
-  {
-    id: 2,
-    name: "Vessel Registration",
+    name: "Department of Marine Fisheries",
     icon: Ship,
-    gradient: "from-teal-500 to-emerald-500",
-    description: "Responsible for vessel registration, documentation, certification, and maintaining the national fishing vessel registry.",
+    gradient: "from-blue-500 to-cyan-500",
+    description: "Manages marine fisheries operations, licensing, and sustainable exploitation of marine fish resources in Liberia's territorial waters and EEZ.",
     services: [
-      "New vessel registration",
-      "Vessel documentation",
-      "Vessel inspections and certification",
-      "Registry maintenance",
-      "Ownership transfers",
+      "Marine fishing licenses and permits",
+      "Commercial fishing operations",
+      "Artisanal fishing support",
+      "Marine catch documentation",
+      "Fleet management and oversight",
     ],
-    contact: "vessels@nafaa.gov.lr",
-    staff: "12+ Personnel",
-  },
-  {
-    id: 3,
-    name: "Compliance & Enforcement",
-    icon: Shield,
-    gradient: "from-red-500 to-pink-500",
-    description: "Conducts monitoring, control, and surveillance (MCS) operations to combat illegal, unreported, and unregulated (IUU) fishing and ensure regulatory compliance.",
-    services: [
-      "Port inspections",
-      "At-sea patrols and surveillance",
-      "IUU fishing investigations",
-      "Catch documentation verification",
-      "Enforcement actions and penalties",
-    ],
-    contact: "enforcement@nafaa.gov.lr",
-    staff: "25+ Personnel",
-  },
-  {
-    id: 4,
-    name: "Fisheries Research",
-    icon: Waves,
-    gradient: "from-purple-500 to-indigo-500",
-    description: "Conducts scientific research on fish stocks, marine ecosystems, and environmental impacts to inform sustainable fisheries management decisions.",
-    services: [
-      "Stock assessments",
-      "Ecosystem research",
-      "Catch and effort data analysis",
-      "Marine biodiversity studies",
-      "Scientific advisory services",
-    ],
-    contact: "research@nafaa.gov.lr",
+    contact: "marine@nafaa.gov.lr",
     staff: "20+ Personnel",
   },
   {
-    id: 5,
-    name: "Aquaculture Development",
+    id: 2,
+    name: "Monitoring, Control and Surveillance (MCS)",
+    icon: Shield,
+    gradient: "from-red-500 to-pink-500",
+    description: "Conducts surveillance and enforcement operations to combat illegal, unreported, and unregulated (IUU) fishing and ensure compliance with fisheries regulations.",
+    services: [
+      "At-sea patrols and inspections",
+      "Port state control",
+      "IUU fishing investigations",
+      "Vessel monitoring systems (VMS)",
+      "Enforcement actions and penalties",
+    ],
+    contact: "mcs@nafaa.gov.lr",
+    staff: "25+ Personnel",
+  },
+  {
+    id: 3,
+    name: "Aquaculture and Inland Fisheries",
     icon: TrendingUp,
     gradient: "from-green-500 to-emerald-500",
-    description: "Promotes and supports the development of sustainable aquaculture practices, including fish farming, training, and technical assistance to fish farmers.",
+    description: "Promotes sustainable aquaculture development and manages inland fisheries resources including rivers, lakes, and reservoirs.",
     services: [
-      "Aquaculture extension services",
-      "Fish farmer training programs",
-      "Site selection and farm design",
-      "Technical assistance",
-      "Seed production support",
+      "Fish farming extension services",
+      "Aquaculture training programs",
+      "Inland fisheries management",
+      "Hatchery operations support",
+      "Technical assistance to farmers",
     ],
     contact: "aquaculture@nafaa.gov.lr",
     staff: "18+ Personnel",
   },
   {
-    id: 6,
-    name: "Data & Statistics",
-    icon: BarChart3,
-    gradient: "from-orange-500 to-amber-500",
-    description: "Collects, analyzes, and publishes fisheries data and statistics to support evidence-based policy making and industry planning.",
+    id: 4,
+    name: "Environment and Climate Change",
+    icon: TreePine,
+    gradient: "from-teal-500 to-green-600",
+    description: "Monitors environmental impacts on fisheries, implements climate change adaptation measures, and ensures sustainable marine ecosystem management.",
     services: [
-      "Catch and landing data collection",
-      "Trade statistics compilation",
-      "Data analysis and reporting",
-      "Statistical publications",
-      "Database management",
+      "Environmental impact assessments",
+      "Climate change adaptation strategies",
+      "Marine habitat conservation",
+      "Ecosystem monitoring",
+      "Biodiversity protection programs",
     ],
-    contact: "statistics@nafaa.gov.lr",
+    contact: "environment@nafaa.gov.lr",
+    staff: "12+ Personnel",
+  },
+  {
+    id: 5,
+    name: "Finance",
+    icon: DollarSign,
+    gradient: "from-amber-500 to-orange-500",
+    description: "Manages financial operations, budgeting, accounting, revenue collection, and financial reporting for the Authority.",
+    services: [
+      "Budget preparation and management",
+      "Revenue collection and accounting",
+      "Financial reporting and audits",
+      "Payment processing",
+      "Financial planning and analysis",
+    ],
+    contact: "finance@nafaa.gov.lr",
+    staff: "15+ Personnel",
+  },
+  {
+    id: 6,
+    name: "Human Resources",
+    icon: Users,
+    gradient: "from-purple-500 to-pink-500",
+    description: "Manages staff recruitment, development, training, performance management, and employee welfare programs.",
+    services: [
+      "Recruitment and onboarding",
+      "Staff training and development",
+      "Performance management",
+      "Payroll and benefits administration",
+      "Employee relations and welfare",
+    ],
+    contact: "hr@nafaa.gov.lr",
     staff: "10+ Personnel",
   },
   {
     id: 7,
-    name: "International Relations",
-    icon: Globe,
-    gradient: "from-indigo-500 to-blue-500",
-    description: "Manages Liberia's participation in regional and international fisheries agreements, treaties, and cooperation initiatives.",
+    name: "Administration and General Services",
+    icon: Building2,
+    gradient: "from-gray-500 to-slate-600",
+    description: "Provides administrative support, facility management, logistics, transportation, and general services to all departments.",
     services: [
-      "Regional fisheries organizations",
-      "Bilateral cooperation agreements",
-      "International treaty compliance",
-      "Diplomatic engagement",
-      "Technical cooperation programs",
+      "Facility and asset management",
+      "Transportation and logistics",
+      "Office administration",
+      "Security and safety management",
+      "Records and archives management",
     ],
-    contact: "international@nafaa.gov.lr",
-    staff: "8+ Personnel",
+    contact: "admin@nafaa.gov.lr",
+    staff: "22+ Personnel",
   },
   {
     id: 8,
-    name: "Administration",
-    icon: Building2,
-    gradient: "from-gray-500 to-slate-500",
-    description: "Provides essential support services including finance, human resources, procurement, IT, and facility management.",
+    name: "Research and Statistics",
+    icon: BarChart3,
+    gradient: "from-indigo-500 to-purple-500",
+    description: "Conducts scientific research, stock assessments, data collection, and statistical analysis to support evidence-based fisheries management.",
     services: [
-      "Financial management and accounting",
-      "Human resources and payroll",
-      "Procurement and logistics",
-      "IT and communications",
-      "Facility and asset management",
+      "Fish stock assessments",
+      "Catch and effort data collection",
+      "Statistical analysis and reporting",
+      "Marine scientific research",
+      "Database management",
     ],
-    contact: "admin@nafaa.gov.lr",
-    staff: "30+ Personnel",
+    contact: "research@nafaa.gov.lr",
+    staff: "16+ Personnel",
+  },
+  {
+    id: 9,
+    name: "Procurement",
+    icon: Briefcase,
+    gradient: "from-blue-600 to-indigo-600",
+    description: "Manages procurement processes, vendor selection, contract administration, and ensures compliance with public procurement regulations.",
+    services: [
+      "Procurement planning and execution",
+      "Vendor registration and management",
+      "Contract administration",
+      "Bid evaluation and awards",
+      "Procurement compliance monitoring",
+    ],
+    contact: "procurement@nafaa.gov.lr",
+    staff: "8+ Personnel",
+  },
+  {
+    id: 10,
+    name: "Internal Audit",
+    icon: FileCheck,
+    gradient: "from-rose-500 to-red-600",
+    description: "Provides independent assurance and oversight through internal audits, risk management, and compliance monitoring.",
+    services: [
+      "Internal audit examinations",
+      "Risk assessment and management",
+      "Compliance reviews",
+      "Financial controls evaluation",
+      "Audit reporting and follow-up",
+    ],
+    contact: "audit@nafaa.gov.lr",
+    staff: "6+ Personnel",
+  },
+  {
+    id: 11,
+    name: "Policy, Planning and Investment",
+    icon: FileText,
+    gradient: "from-cyan-500 to-blue-600",
+    description: "Develops fisheries policies, strategic plans, investment programs, and coordinates with national development initiatives.",
+    services: [
+      "Policy formulation and analysis",
+      "Strategic planning and development",
+      "Investment promotion and facilitation",
+      "Program monitoring and evaluation",
+      "Donor coordination and partnerships",
+    ],
+    contact: "policy@nafaa.gov.lr",
+    staff: "12+ Personnel",
   },
 ];
 
@@ -188,9 +236,9 @@ export default function DepartmentsPage() {
                 Our Organizational Structure
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                NaFAA operates through eight specialized departments, each focused on delivering specific services 
-                and functions essential to sustainable fisheries management. From licensing and enforcement to 
-                research and international cooperation, our departments work together to fulfill NaFAA's mandate 
+                NaFAA operates through eleven specialized departments, each focused on delivering specific services 
+                and functions essential to sustainable fisheries management. From marine fisheries and aquaculture to 
+                monitoring and enforcement, finance, research, and policy development, our departments work together to fulfill NaFAA's mandate 
                 and serve Liberia's fishing communities and industries.
               </p>
             </motion.div>
@@ -206,7 +254,7 @@ export default function DepartmentsPage() {
                 <Card className="border-0 shadow-lg text-center bg-gradient-to-br from-blue-50 to-cyan-50">
                   <CardContent className="pt-8 pb-8">
                     <Building2 className="h-10 w-10 text-nafaa-ocean mx-auto mb-3" />
-                    <div className="text-4xl font-bold text-nafaa-ocean mb-2">8</div>
+                    <div className="text-4xl font-bold text-nafaa-ocean mb-2">11</div>
                     <div className="text-sm text-gray-600">Departments</div>
                   </CardContent>
                 </Card>

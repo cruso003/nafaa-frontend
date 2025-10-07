@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Building2, Users, FileText, Shield, TrendingUp, Globe, Waves, Ship } from "lucide-react";
+import { Building2, Users, FileText, Shield, TrendingUp, Globe, Waves, Ship, TreePine, DollarSign, BarChart3, Briefcase, FileCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -298,52 +298,70 @@ const deputyDirectors = [
 
 const departments = [
   {
-    name: "Licensing Division",
-    icon: FileText,
-    gradient: "from-blue-500 to-cyan-500",
-    description: "Fishing licenses, permits, and certificates",
-  },
-  {
-    name: "Vessel Registration",
+    name: "Department of Marine Fisheries",
     icon: Ship,
-    gradient: "from-teal-500 to-emerald-500",
-    description: "Vessel registration and documentation",
+    gradient: "from-blue-500 to-cyan-500",
+    description: "Marine fisheries operations and licensing",
   },
   {
-    name: "Compliance & Enforcement",
+    name: "Monitoring, Control and Surveillance",
     icon: Shield,
     gradient: "from-red-500 to-pink-500",
-    description: "Monitoring, control, and surveillance",
+    description: "MCS operations and IUU fishing enforcement",
   },
   {
-    name: "Fisheries Research",
-    icon: Waves,
-    gradient: "from-purple-500 to-indigo-500",
-    description: "Scientific research and stock assessment",
-  },
-  {
-    name: "Aquaculture Development",
+    name: "Aquaculture and Inland Fisheries",
     icon: TrendingUp,
     gradient: "from-green-500 to-emerald-500",
-    description: "Fish farming support and extension",
+    description: "Aquaculture development and inland fisheries",
   },
   {
-    name: "Data & Statistics",
-    icon: FileText,
-    gradient: "from-orange-500 to-amber-500",
-    description: "Data collection and analysis",
+    name: "Environment and Climate Change",
+    icon: TreePine,
+    gradient: "from-teal-500 to-green-600",
+    description: "Environmental monitoring and climate adaptation",
   },
   {
-    name: "International Relations",
-    icon: Globe,
-    gradient: "from-indigo-500 to-blue-500",
-    description: "Regional cooperation and treaties",
+    name: "Finance",
+    icon: DollarSign,
+    gradient: "from-amber-500 to-orange-500",
+    description: "Financial management and accounting",
   },
   {
-    name: "Administration",
+    name: "Human Resources",
+    icon: Users,
+    gradient: "from-purple-500 to-pink-500",
+    description: "Staff management and development",
+  },
+  {
+    name: "Administration and General Services",
     icon: Building2,
-    gradient: "from-gray-500 to-slate-500",
-    description: "Finance, HR, and support services",
+    gradient: "from-gray-500 to-slate-600",
+    description: "Administrative support and facility management",
+  },
+  {
+    name: "Research and Statistics",
+    icon: BarChart3,
+    gradient: "from-indigo-500 to-purple-500",
+    description: "Scientific research and data analysis",
+  },
+  {
+    name: "Procurement",
+    icon: Briefcase,
+    gradient: "from-blue-600 to-indigo-600",
+    description: "Procurement and contract management",
+  },
+  {
+    name: "Internal Audit",
+    icon: FileCheck,
+    gradient: "from-rose-500 to-red-600",
+    description: "Internal audit and compliance",
+  },
+  {
+    name: "Policy, Planning and Investment",
+    icon: FileText,
+    gradient: "from-cyan-500 to-blue-600",
+    description: "Policy development and strategic planning",
   },
 ];
 
