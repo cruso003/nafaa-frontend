@@ -33,10 +33,10 @@ export default function LeadershipPage() {
                 About NaFAA
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Leadership Team
+                Management Team
               </h1>
               <p className="text-xl text-blue-100">
-                Meet the dedicated professionals leading Liberia's fisheries and aquaculture sector
+                Meet the leadership responsible for managing Liberia's fisheries and aquaculture authority
               </p>
             </motion.div>
           </div>
@@ -53,7 +53,7 @@ export default function LeadershipPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-nafaa-ocean mb-4">
-                Executive Leadership
+                Executive Management
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Our leadership team brings decades of combined experience in fisheries management, marine conservation, and public administration
@@ -159,6 +159,27 @@ export default function LeadershipPage() {
                   </Card>
                 </motion.div>
               ))}
+
+              {/* Legal summary & link to full management text */}
+            </div>
+
+            <div className="max-w-4xl mx-auto mb-12">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Card className="border-0 shadow-md">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold text-nafaa-ocean mb-2">Role & Legal Mandate</h4>
+                    <p className="text-sm text-gray-700 mb-3">The Director General and Deputies have defined appointments, terms and functions under the Fisheries and Aquaculture Act. For the full authoritative description (appointment, qualifications, functions, Board relationship and tenure), see the complete management structure.</p>
+                    <div>
+                      <Link href="/about/management" className="text-nafaa-ocean font-medium hover:underline">Read the full Management Structure →</Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
           </div>
         </section>

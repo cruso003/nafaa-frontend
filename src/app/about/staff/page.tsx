@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Users, UserCircle, Briefcase, Calculator, HeartHandshake, Globe, FileText, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const staffCategories = [
   {
@@ -213,6 +214,26 @@ export default function StaffPage() {
                 </Card>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* HR & Management link */}
+        <section className="py-8 bg-white">
+          <div className="max-w-4xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="border-0 shadow-md">
+                <CardContent className="p-6 text-center">
+                  <h4 className="text-lg font-semibold text-nafaa-ocean mb-2">Human Resources & Appointments</h4>
+                  <p className="text-sm text-gray-700 mb-3">The Director General prepares the annual Human Resources Management Plan and recommends recruitment to the Board. See the full management structure for details on HR responsibilities and appointment procedures.</p>
+                  <Link href="/about/management" className="text-nafaa-ocean font-medium hover:underline">Open Management Structure →</Link>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </section>
 

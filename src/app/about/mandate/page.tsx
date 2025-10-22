@@ -89,6 +89,26 @@ export default function MandatePage() {
           </div>
         </section>
 
+        {/* Link to full management structure */}
+        <section className="py-8 bg-white">
+          <div className="max-w-4xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="border-0 shadow-md">
+                <CardContent className="p-6 text-center">
+                  <h4 className="text-lg font-semibold text-nafaa-ocean mb-2">Management & Governance</h4>
+                  <p className="text-sm text-gray-700 mb-3">Details about the Director General, Deputies and Board (appointments, functions and tenure) are documented in the full management structure.</p>
+                  <Link href="/about/management" className="text-nafaa-ocean font-medium hover:underline">View full Management Structure →</Link>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Core Responsibilities */}
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4">
@@ -185,7 +205,7 @@ export default function MandatePage() {
                 Learn more about our leadership, organization structure, and how we serve Liberia's fisheries sector
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/about/leadership">
+                <Link href="/about/management">
                   <Button size="lg" className="bg-white text-nafaa-ocean hover:bg-gray-100">
                     <Users className="mr-2 h-5 w-5" />
                     Meet Our Team

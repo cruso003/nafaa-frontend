@@ -279,13 +279,13 @@ const quickLinks = [
     icon: Target,
   },
   {
-    title: "Leadership Team",
-    href: "/about/leadership",
+    title: "Management Team",
+    href: "/about/management",
     icon: Users,
   },
   {
     title: "Organization",
-    href: "/about/organization",
+    href: "/about/board",
     icon: Ship,
   },
   {

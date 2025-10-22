@@ -34,7 +34,7 @@ function HomeContent() {
       {(layout === 'split' || layout === 'slider') && <StatsSectionAnimated />}
       
       {/* Conditional Officials Section */}
-      {layout === 'modern' && <OfficialsSection />}
+      {layout === 'modern' && <OfficialsSectionZigzag />}
       {layout === 'split' && <OfficialsSectionZigzag />}
       {layout === 'slider' && <OfficialsCompact />}
       

@@ -308,6 +308,26 @@ export default function DepartmentsPage() {
           </div>
         </section>
 
+        {/* Management link card */}
+        <section className="py-8 bg-white">
+          <div className="max-w-5xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="border-0 shadow-md">
+                <CardContent className="p-6 text-center">
+                  <h4 className="text-lg font-semibold text-nafaa-ocean mb-2">Departments & Deputies</h4>
+                  <p className="text-sm text-gray-700 mb-3">Deputy Directors (Administration, Technical Services, etc.) have defined roles in supporting departmental programs. For full role descriptions and appointment terms, view the management structure.</p>
+                  <Link href="/about/management" className="text-nafaa-ocean font-medium hover:underline">View Management Structure →</Link>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Departments Grid */}
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4">
