@@ -58,7 +58,7 @@ interface MessageLink {
 // Knowledge base for the chatbot
 const knowledgeBase = {
   greetings: [
-    "Hello! I'm the NFAA Virtual Assistant. How can I help you today?",
+    "Hello! I'm the NaFAA Virtual Assistant. How can I help you today?",
     "Hi there! Welcome to the National Fisheries and Aquaculture Authority. What can I assist you with?",
     "Greetings! I'm here to help with your fishing and aquaculture needs.",
   ],
@@ -94,7 +94,7 @@ const knowledgeBase = {
   },
   
   contact: {
-    info: "Need to reach us?\n\n• Email: info@nafaa.gov.lr\n• Phone: +231-XXX-XXXX\n• Office: Ministry of Agriculture, Monrovia\n• Hours: Mon-Fri, 8am-5pm\n\nOr use our contact form for specific inquiries!",
+    info: "Need to reach us?\n\n• Email: inquiries@nafaa.gov.lr\n• Phone: +231 777 001 193\n• Office: Ministry of Agriculture, Monrovia\n• Hours: Mon-Fri, 8am-5pm\n\nOr use our contact form for specific inquiries!",
   },
   
   help: {
@@ -427,7 +427,7 @@ export default function ChatBot() {
                   <div className="absolute bottom-0 right-0 h-3 w-3 bg-green-400 rounded-full border-2 border-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">NFAA Assistant</h3>
+                  <h3 className="font-semibold">NaFAA Assistant</h3>
                   <p className="text-xs opacity-90">Online • Ready to help</p>
                 </div>
               </div>

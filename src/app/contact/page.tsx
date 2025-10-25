@@ -246,14 +246,14 @@ const contactMethods = [
   {
     title: "Email Us",
     icon: Mail,
-    value: "info@nafaa.gov.lr",
+    value: "inquiries@nafaa.gov.lr",
     description: "General inquiries and information",
     gradient: "from-blue-500 to-cyan-500",
   },
   {
     title: "Call Us",
     icon: Phone,
-    value: "+231 XXX XXXX",
+    value: "+231 777 001 193",
     description: "Mon-Fri: 8AM-5PM",
     gradient: "from-green-500 to-emerald-500",
   },
@@ -267,7 +267,7 @@ const contactMethods = [
   {
     title: "WhatsApp",
     icon: MessageSquare,
-    value: "+231 XXX XXXX",
+    value: "+231 777 001 193",
     description: "Quick support and inquiries",
     gradient: "from-teal-500 to-cyan-500",
   },

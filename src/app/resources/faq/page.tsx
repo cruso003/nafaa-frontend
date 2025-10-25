@@ -166,7 +166,7 @@ const faqCategories = [
       {
         id: "gen-1",
         question: "How do I contact NaFAA?",
-        answer: "You can reach NaFAA through: (1) Email: info@nafaa.gov.lr, (2) Phone: +231-XXX-XXXX (Mon-Fri 8am-5pm), (3) Visit: NaFAA Headquarters, Bushrod Island, Monrovia, (4) Online: Submit inquiries through our Contact page. For urgent matters, call our hotline or visit in person.",
+        answer: "You can reach NaFAA through: (1) Email: inquiries@nafaa.gov.lr, (2) Phone: +231 777 001 193 (Mon-Fri 8am-5pm), (3) Visit: NaFAA Headquarters, Bushrod Island, Monrovia, (4) Online: Submit inquiries through our Contact page. For urgent matters, call our hotline or visit in person.",
       },
       {
         id: "gen-2",

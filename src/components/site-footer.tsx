@@ -76,11 +76,11 @@ export function SiteFooter() {
               </li>
               <li className="flex gap-2">
                 <Phone className="h-4 w-4 shrink-0 mt-0.5 text-blue-200" />
-                <span className="text-blue-100">+231 (0) 777 123 456</span>
+                <span className="text-blue-100">+231 777 001 193</span>
               </li>
               <li className="flex gap-2">
                 <Mail className="h-4 w-4 shrink-0 mt-0.5 text-blue-200" />
-                <span className="text-blue-100">info@nafaa.gov.lr</span>
+                <span className="text-blue-100">inquiries@nafaa.gov.lr</span>
               </li>
             </ul>
             <div className="mt-4">
