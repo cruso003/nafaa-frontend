@@ -16,15 +16,50 @@ import { PublicationsSection } from "@/components/sections/publications-section"
 import { NewsSidebarSection } from "@/components/sections/news-sidebar-section";
 import { NewsPublicationsTabs } from "@/components/sections/news-publications-tabs";
 import { LayoutSwitcher } from "@/components/layout-switcher";
+import { EventsBanner } from "@/components/events-banner";
+import { EventsPopup } from "@/components/events-popup";
+import { getNextEvent, getUpcomingEvents } from "@/lib/events-data";
 import { type LayoutType } from "@/lib/layout-config";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
+import { Calendar } from "lucide-react";
 
 function HomeContent() {
   const searchParams = useSearchParams();
   const layout = (searchParams?.get('layout') || 'modern') as LayoutType;
+  
+  // Get upcoming events
+  const upcomingEvents = getUpcomingEvents(90); // Events in next 90 days
+  const nextEvent = getNextEvent();
+  
+  // State for sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<typeof nextEvent>(nextEvent);
+
+  const handleEventClick = (event: any) => {
+    setSelectedEvent(event);
+    setIsSidebarOpen(true);
+  };
 
   return (
     <main>
+      {/* Events Banner - Shows at top of page */}
+      {upcomingEvents.length > 0 && (
+        <EventsBanner 
+          events={upcomingEvents} 
+          onEventClick={handleEventClick}
+        />
+      )}
+      
+      {/* Events Sidebar - Shows event details */}
+      {selectedEvent && (
+        <EventsPopup 
+          event={selectedEvent}
+          events={upcomingEvents}
+          isOpen={isSidebarOpen}
+          onOpenChange={setIsSidebarOpen}
+        />
+      )}
+      
       {/* Conditional Hero Section based on layout */}
       {layout === 'modern' && <HeroSection />}
       {layout === 'split' && <HeroSectionSplit />}
